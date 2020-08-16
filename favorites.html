@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styleindex.css">
-    <title>Proyecto GIFOS</title>
+    <link rel="stylesheet" href="css/stylefavorites.css">
+    <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
+    <title>Favorites</title>
 </head>
 <body>
     <header>
@@ -26,22 +27,22 @@
         </nav>    
     </header>
 
-    <main class="tab main">
-        <section class="title">
-            <h1 class="hs"> Inspírate, busca, guarda, y crea <hr> los mejores <span class= "gifos" > GIFOS </span> </h1>
+    <main class="tab favorites-main">
+        <section class="favorites-title"> 
+            <img src="assets/icon-favoritos.svg" alt="icon-fav" id="fav-icon">
+            <h1 class="hs" id="fav-title-hs"> Favoritos </h1>
+
         </section>
 
-        <section class="search">
-            <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
-            <div class="search-bar">
-                <input type="text" placeholder="Search..">
-                <img src="assets/icon-search.svg" alt="iconsearch">
-            </div >
+        <section class="favorites-images"> 
+
+
         </section>
-        
-        <section class="trending">
-            <h2 class="hs" id="trending-hs"> Trending: </h2>
-            <p class="ps"> Reactions, Entertainment, Sports, Stickers, Artists</p>
+
+        <section class="favorites-search"> 
+            <div class= "search-bar" id="favorites-search-bar"> 
+                <button id="favorites-button"> VER MÁS </button>
+            </div>
         </section>
 
         <section class="trending-gifos">
@@ -60,7 +61,7 @@
         <p>© GIFOS 2020 All Rights Reserved.</p> 
     </footer>
 
+
     <script src="javascript/index.js"> </script>
-    
 </body>
 </html>

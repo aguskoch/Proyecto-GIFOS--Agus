@@ -83,7 +83,7 @@ header nav .menu  ul .nav-li .nav-a:hover {
 } 
 
 header nav .menu input[type="checkbox"]:checked ~ ul {
-    height: 40vh;
+    height: 1000%;
 }
 
 
@@ -215,6 +215,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     font-size: 1em;
     padding: 4vh;
 }
+
 
 .contacts > h4,a{
     padding: 0.5em;

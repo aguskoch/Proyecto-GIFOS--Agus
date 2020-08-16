@@ -1,0 +1,61 @@
+
+#favorites-link{
+    color: #9CAFC3;
+}
+
+.favorites-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "favorites-title"
+    "favorites-images"
+    "favorites-search"
+    "trending-gifos"
+    ;
+}
+
+.favorites-title{
+    grid-area: favorites-title;
+    padding-top: 10em;
+}
+
+#fav-title-hs{
+    padding-top: 2vh;
+    font-size:1.5em;
+}
+
+#fav-icon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    size: 2em;
+}
+
+.favorites-images{
+    grid-area: favorites-images;
+}
+
+.favorites-search{
+    grid-area: favorites-search;
+    justify-self: center;
+}
+
+#favorites-search-bar{
+    width: 20vw;
+    justify-content: center;
+}
+
+#favorites-button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #572EE5;
+    background: none;
+}
+
+
+@media screen and (min-width: 800px){
+    #favorites-search-bar{
+        width: 15vw;
+    }
+}
