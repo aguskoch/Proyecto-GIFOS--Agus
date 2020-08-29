@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styleindex.css">
+    <link rel="stylesheet" href="css/styleindex2.css">
     <title>Proyecto GIFOS</title>
 </head>
 <body>
     <header>
-        <a href="index.html"> <img src="assets/logo-desktop.svg" alt="logo" class="logo"/></a>
+        <a href="index.html"> 
+            <img src="assets/logo-desktop.svg" alt="logo" class="logo" id="logo-light"/>
+            <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
+        
+        </a>
         <nav>
             <div class="menu">
                 <input type="checkbox" id="checkbox" />
@@ -17,9 +21,12 @@
                 <span></span>
                 <span></span>
                 <ul>
-                    <li class="nav-li"> <a class="nav-a" href=#night> MODO NOCTURNO </a> </li>
+                    <li class="nav-li switch"> 
+                        <a class="nav-a" id="dark-mode"> MODO NOCTURNO </a> 
+                        <a class="nav-a" id="light-mode" > MODO DIURNO </a>
+                    </li>
                     <li class="nav-li"> <a id="favorites-link" class="tablinks nav-a" href="favorites.html">  FAVORITOS </a> </li>
-                    <li class="nav-li"> <a class="tablinks nav-a" href=#mygifos> MIS GIFOS </a> </li>
+                    <li class="nav-li"> <a class="tablinks nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
                     <i class="fas fa-plus" id="header-button"></i>
                 </ul>
             </div>
@@ -34,8 +41,8 @@
         <section class="search">
             <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
             <div class="search-bar">
-                <input type="text" placeholder="Search..">
-                <img src="assets/icon-search.svg" alt="iconsearch">
+                <input type="text" placeholder="Search.." class="search-bar-text">
+                <i class="fas fa-search"></i>
             </div >
         </section>
         

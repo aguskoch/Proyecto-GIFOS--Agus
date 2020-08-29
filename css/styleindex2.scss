@@ -23,6 +23,11 @@ html{
 body {
     line-height: 1;
     display: grid;
+    transition: 0.3s ease all;
+}
+
+.dark{
+    background: #37383C;
 }
 
 ol, ul {
@@ -34,8 +39,22 @@ header{
     position: fixed;
     z-index: 10;
     width: 100%;
-    background-color: #fff;
     border-top: 0.2em solid #572EE5;
+}
+
+#logo-light{
+    display: inline;
+
+    body.dark & {
+        display: none;
+    }
+}   
+#logo-dark{
+    display: none;
+
+    body.dark & {
+        display: grid;
+    }
 }
 
 header > a{
@@ -58,6 +77,12 @@ header nav .menu ul {
     height: 0px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-top: 7vh;
+
+    
+    body.dark & {
+        background: #000000;
+    }
 }
 
 
@@ -70,12 +95,26 @@ header nav .menu ul .nav-li .nav-a {
     line-height: 28px;
     display: block;
     font-size: 1em;
-    box-shadow: inset -1px 0 0 0  #fff;
 
 }
 
 #header-button{
     visibility: hidden;
+}
+
+#dark-mode{
+    display: contents;
+
+    body.dark & {
+        display: none;
+    }
+}   
+#light-mode{
+    display: none;
+
+    body.dark & {
+        display: contents;
+    }
 }
 
 header nav .menu  ul .nav-li .nav-a:hover {
@@ -149,6 +188,15 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     line-height: 1.2em;
     color: #572EE5;
     font-family: 'Montserrat', sans-serif;
+
+    body.dark & {
+        color: #FFFFFF;
+    }
+}
+
+.secondTab{
+    padding-top: 2vh;
+    font-size:1.5em;
 }
   
 .title > h1 .gifos {
@@ -173,7 +221,25 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     
+    body.dark & {
+        background: #37383C;
+        border: 1px solid #FFFFFF;
+    }
+    
+}
+
+.search-bar-text{
+    background: none;
+}
+
+.fa-search{
+    color: #572EE5;
+
+    body.dark & {
+        color: #FFFFFF;
+    }
 }
 
 .trending{
@@ -192,11 +258,19 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     font-weight: 700;
     color: #572EE5;
 
+    body.dark & {
+        color: #FFFFFF;
+    }
+
 }
 
 .trending-gifos{
     grid-area: trending-gifos;
-    background: #F3F5F8;       
+    background: #F3F5F8;   
+    
+    body.dark & {
+        background: #222326;
+    }
 }
 
 #trending-gifos-hs{
@@ -206,6 +280,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 .trending-gifos > p{
     text-align: center;
+
+    body.dark & {
+        color: #FFFFFF;
+    }
 }
 
 .footer{ 
@@ -214,11 +292,23 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     align-items: center;
     font-size: 1em;
     padding: 4vh;
+
+    p {
+        body.dark & {
+            color: #FFFFFF;
+        }
+    }
 }
+
+
 
 
 .contacts > h4,a{
     padding: 0.5em;
+
+    body.dark & {
+        color: #FFFFFF
+    }
 }
 
 .fab{
@@ -227,12 +317,27 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 .fab:hover{
     color: #572EE5;
+
+    body.dark & {
+        color: #FFFFFF;
+    }
 }
+
+.noContent{
+    /* display: none; */
+}
+
+.noContent-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    size: 1vh;
+}
+
 
 @media screen and (min-width: 800px){
     header{
         padding: 2.5vh;
-        background-color: rgba(255, 255, 255, 0.8);
     }
 
     header nav .menu ul {
@@ -244,6 +349,11 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         height: unset;
         display: flex;
         flex-flow: row;
+        margin-top: 0;
+
+        body.dark & {
+            background: #37383C;
+        }
     }
 
     header nav .menu  ul .nav-li {
@@ -264,6 +374,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         padding: unset;
         line-height: unset;
         color: #572EE5;
+
+        body.dark & {
+            color: #FFFFFF;
+        }
     }
 
     header nav .menu  ul .nav-li:active{
@@ -292,11 +406,24 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         border-radius: 50%;
         color: #572EE5;
 
+        body.dark &{
+            color: #FFFFFF;
+            border: 1px solid #FFFFFF;
+            background: #37383C;
+
+        }
+
     }
 
     #header-button:hover{
         background: #572EE5;
-        color: #fff;
+        color: #FFFFFF;
+
+        body.dark & {
+            color: #222326;
+            border: 1px solid #FFFFFF;
+            background: #FFFFFF;
+        }
         
     }
 
@@ -304,10 +431,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         background: #9CAFC3;
         border: 1px solid #9CAFC3;
         color: #fff;
-    }
-
-    .search-bar{
-        width: 30vw;
     }
 
     .footer{
