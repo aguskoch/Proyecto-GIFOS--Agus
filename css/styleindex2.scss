@@ -98,6 +98,10 @@ header nav .menu ul .nav-li .nav-a {
 
 }
 
+#link-button{
+    visibility: hidden;
+}
+
 #header-button{
     visibility: hidden;
 }
@@ -197,9 +201,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 .secondTab{
     padding-top: 2vh;
     font-size:1.5em;
+    line-height: 1.5em;
 }
   
-.title > h1 .gifos {
+.gifos {
     color: #5ED7C6;
     font-family: 'Montserrat', sans-serif;
 }
@@ -301,8 +306,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 }
 
 
-
-
 .contacts > h4,a{
     padding: 0.5em;
 
@@ -311,9 +314,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     }
 }
 
-.fab{
-    color:#9CAFC3;
-}
 
 .fab:hover{
     color: #572EE5;
@@ -396,6 +396,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     }
     header nav .menu span {
         display: none;
+    }
+
+    #link-button{
+        visibility: visible;
     }
 
     #header-button{

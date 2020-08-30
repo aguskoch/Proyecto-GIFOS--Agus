@@ -94,6 +94,10 @@ header nav .menu ul .nav-li .nav-a {
   font-size: 1em;
 }
 
+#link-button {
+  visibility: hidden;
+}
+
 #header-button {
   visibility: hidden;
 }
@@ -205,9 +209,10 @@ body.dark .hs {
 .secondTab {
   padding-top: 2vh;
   font-size: 1.5em;
+  line-height: 1.5em;
 }
 
-.title > h1 .gifos {
+.gifos {
   color: #5ED7C6;
   font-family: 'Montserrat', sans-serif;
 }
@@ -336,10 +341,6 @@ body.dark .contacts > h4, body.dark a {
   color: #FFFFFF;
 }
 
-.fab {
-  color: #9CAFC3;
-}
-
 .fab:hover {
   color: #572EE5;
 }
@@ -419,6 +420,9 @@ body.dark .fab:hover {
   }
   header nav .menu span {
     display: none;
+  }
+  #link-button {
+    visibility: visible;
   }
   #header-button {
     visibility: visible;

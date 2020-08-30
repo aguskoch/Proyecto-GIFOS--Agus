@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styleindex2.css">
-    <title>Proyecto GIFOS</title>
+    <link rel="stylesheet" href="css/creategifo.css">
+    <title>Crear GIFO</title>
 </head>
 <body>
     <header>
         <a href="index.html"> 
             <img src="assets/logo-desktop.svg" alt="logo" class="logo" id="logo-light"/>
             <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
-        
         </a>
         <nav>
             <div class="menu">
@@ -27,7 +27,7 @@
                     </li>
                     <li class="nav-li"> <a id="favorites-link" class="tablinks nav-a" href="favorites.html">  FAVORITOS </a> </li>
                     <li class="nav-li"> <a class="nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
-                    <a id="link-button" href="creategifo.html">
+                    <a href="creategifo.html">
                         <i class="fas fa-plus" id="header-button"></i>
                     </a>
                 </ul>
@@ -35,28 +35,36 @@
         </nav>    
     </header>
 
-    <main class="tab main">
-        <section class="title">
-            <h1 class="hs"> Inspírate, busca, guarda, y crea <hr> los mejores <span class= "gifos" > GIFOS </span> </h1>
+    <main class="tab create-main">
+        <section class="createGifo-title">
+            <div class="camera-createGifo">
+                <img class="image-createGifo" id="img-createGifo-light" src="assets/camara.svg" alt="camera">
+                <img class="image-createGifo" id="img-createGifo-dark" src="assets/camara-modo-noc.svg" alt="camera">
+                <div id="background-createGifo"></div>
+            </div>
+            <div class="text-createGifo">
+                <div class="square one"></div>
+                <div class="square two"></div>
+                <h2 class="secondTab hs">Aquí podrás crear tus propios <span class="gifos" > GIFOS </span></h2>
+                <p class="p-createGifo">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)</p>
+                <div class="square three"></div>
+                <div class="square four"></div>
+            </div>
+            <div class="steps">
+                <p class="steps-number">1</p>
+                <p class="steps-number">2</p>
+                <p class="steps-number">3</p>
+            </div>
+            <img class="image-steps" id="img-steps-light" src="assets/pelicula.svg" alt="pelicula">
+            <img class="image-steps" id="img-steps-dark" src="assets/pelicula-modo-noc.svg" alt="pelicula">
+            <hr class="line">
+            <div class="creategifo-start"> 
+                <div class= "search-bar" id="creategifo-start-btn"> 
+                    <button id="start-button"> COMENZAR </button>
+                </div>
+            </div>
         </section>
 
-        <section class="search">
-            <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
-            <div class="search-bar">
-                <input type="text" placeholder="Search.." class="search-bar-text">
-                <i class="fas fa-search"></i>
-            </div >
-        </section>
-        
-        <section class="trending">
-            <h2 class="hs" id="trending-hs"> Trending: </h2>
-            <p class="ps"> Reactions, Entertainment, Sports, Stickers, Artists</p>
-        </section>
-
-        <section class="trending-gifos">
-            <h2 class="hs" id="trending-gifos-hs"> Trending GIFOS </h2>
-            <p> Mira los últimos GIFOS de nuestra comunidad.</p>
-        </section>
     </main>
 
     <footer class="footer"> 
@@ -70,6 +78,5 @@
     </footer>
 
     <script src="javascript/index.js"> </script>
-    
 </body>
 </html>

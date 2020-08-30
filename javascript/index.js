@@ -13,7 +13,8 @@ function functionDarkMode (){
     }
 }
 
-//We obtain the mode that the User has - light or dark
+//Obtain the mode that the User has - light or dark
+//If dark - add Class Dark. If light - remove Class Dark.
 if(localStorage.getItem("dark-mode") === "true"){
     document.body.classList.add ("dark");
 } else {
