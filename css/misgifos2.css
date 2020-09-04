@@ -7,8 +7,8 @@
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto auto auto 1fr;
+      grid-template-rows: auto auto auto 1fr;
       grid-template-areas: "misgifos-title" "misgifos-images" "misgifos-search" "trending-gifos";
 }
 
@@ -38,6 +38,8 @@
   grid-area: misgifos-search;
   -ms-grid-column-align: center;
       justify-self: center;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
 }
 
 #misgifos-search-bar {

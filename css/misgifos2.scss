@@ -5,7 +5,7 @@
 .misgifos-main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
     grid-template-areas: 
     "misgifos-title"
     "misgifos-images"
@@ -33,6 +33,8 @@
 .favorites-search{
     grid-area: misgifos-search;
     justify-self: center;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 

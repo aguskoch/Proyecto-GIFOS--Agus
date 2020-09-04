@@ -25,8 +25,11 @@
                         <a class="nav-a" id="dark-mode"> MODO NOCTURNO </a> 
                         <a class="nav-a" id="light-mode" > MODO DIURNO </a>
                     </li>
+                    <hr class="hr">
                     <li class="nav-li"> <a id="favorites-link" class="tablinks nav-a" href="favorites.html">  FAVORITOS </a> </li>
+                    <hr class="hr">
                     <li class="nav-li"> <a class="nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
+                    <hr class="hr">
                     <a id="link-button" href="creategifo.html">
                         <i class="fas fa-plus" id="header-button"></i>
                     </a>
@@ -42,10 +45,17 @@
 
         <section class="search">
             <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
-            <div class="search-bar">
-                <input type="text" placeholder="Search.." class="search-bar-text">
-                <i class="fas fa-search"></i>
-            </div >
+            <div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text">
+                    <i class="fas fa-search"></i>
+                </div>
+                    <div class="search-bar active">
+                        <!-- <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text-active"> -->
+                        <i class="fas fa-search lupe-active"></i>
+                    <div class="line-search"></div>
+                </div>
+            </div>
         </section>
         
         <section class="trending">
@@ -56,6 +66,15 @@
         <section class="trending-gifos">
             <h2 class="hs" id="trending-gifos-hs"> Trending GIFOS </h2>
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
+            <div class="trending-gifos-carrousel">
+                <button id="btn-bw-carrousel"> <i class="fas fa-angle-left"></i></i> </button>
+                <img class="gifTrending" id="gifTrending1" alt="gif">
+                <img class="gifTrending" id="gifTrending2" alt="gif">
+                <img class="gifTrending" id="gifTrending3" alt="gif">
+                <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i></i> </button>
+            </div>
+            
+            
         </section>
     </main>
 
@@ -70,6 +89,7 @@
     </footer>
 
     <script src="javascript/index.js"> </script>
+    <script src="javascript/trendingpanel.js"></script>
     
 </body>
 </html>
