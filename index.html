@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styleindex2.css">
+    <link rel="stylesheet" href="css/gifwrapper.css">
     <title>Proyecto GIFOS</title>
 </head>
 <body>
@@ -47,8 +48,8 @@
             <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
             <div>
                 <div class="search-bar">
-                    <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text">
-                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word">
+                    <i id="lupe" class="fas fa-search"></i>
                 </div>
                     <div class="search-bar active">
                         <!-- <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text-active"> -->
@@ -56,11 +57,17 @@
                     <div class="line-search"></div>
                 </div>
             </div>
+            
+        </section>
+
+        <section id="gif-results">
         </section>
         
         <section class="trending">
             <h2 class="hs" id="trending-hs"> Trending: </h2>
-            <p class="ps"> Reactions, Entertainment, Sports, Stickers, Artists</p>
+            <div id="trending-terms"> 
+
+            </div>
         </section>
 
         <section class="trending-gifos">
@@ -68,9 +75,36 @@
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
             <div class="trending-gifos-carrousel">
                 <button id="btn-bw-carrousel"> <i class="fas fa-angle-left"></i></i> </button>
-                <img class="gifTrending" id="gifTrending1" alt="gif">
-                <img class="gifTrending" id="gifTrending2" alt="gif">
-                <img class="gifTrending" id="gifTrending3" alt="gif">
+                <div class="gif-wrapper">
+                    <div class="gif-buttons">
+                        <button> <i class="far fa-heart"></i> </button>
+                        <button><i class="fas fa-download"></i></button>
+                        <button><i class="fas fa-expand-alt"></i></button>
+                    </div>
+                    <img class="gifTrending" id="gifTrending1" alt="gif">
+                    <h4 class="gif-username">User</h4>
+                    <p class="gif-title">GifoTitle</p>
+                </div>
+                <div class="gif-wrapper">
+                    <div class="gif-buttons">
+                        <button> <i class="far fa-heart"></i> </button>
+                        <button><i class="fas fa-download"></i></button>
+                        <button><i class="fas fa-expand-alt"></i></button>
+                    </div>
+                    <img class="gifTrending" id="gifTrending2" alt="gif">
+                    <h4 class="gif-username">User</h4>
+                    <p class="gif-title">GifoTitle</p>
+                </div>
+                <div class="gif-wrapper">
+                    <div class="gif-buttons">
+                        <button> <i class="far fa-heart"></i> </button>
+                        <button><i class="fas fa-download"></i></button>
+                        <button><i class="fas fa-expand-alt"></i></button>
+                    </div>
+                    <img class="gifTrending" id="gifTrending3" alt="gif">
+                    <h4 class="gif-username">User</h4>
+                    <p class="gif-title">GifoTitle</p>
+                </div>
                 <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i></i> </button>
             </div>
             
@@ -89,7 +123,9 @@
     </footer>
 
     <script src="javascript/index.js"> </script>
+    <script src="javascript/searchengine.js"></script>
     <script src="javascript/trendingpanel.js"></script>
+    <script src="javascript/trendingterms.js"></script>
     
 </body>
 </html>

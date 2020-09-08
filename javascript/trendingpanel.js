@@ -9,7 +9,7 @@ let urls = "";
 async function getUrls(){
   const response = await fetch(url+apiKey);
   const json = await response.json();
-  console.log(json)
+  //console.log(json)
   return json.data.map(image => image.images.original.url);
 }
 getUrls().then(images => {

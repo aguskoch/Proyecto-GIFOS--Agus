@@ -102,6 +102,7 @@ header nav .menu ul {
     opacity: 0.5;
 }
 
+
 header nav .menu ul .nav-li .nav-a {
     position: relative;
     text-decoration: none;
@@ -192,11 +193,12 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 .main{
     display:grid;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: 1fr;
     grid-template-areas: 
     "title"
     "search"
+    "gifResults"
     "trending"
     "trending-gifos";
 }
@@ -207,12 +209,13 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 }
   
 .hs {
-    font-size: 2.8em;
+    font-size: 2em;
     text-align: center;
     font-weight: 800;
     line-height: 1.2em;
     color: #572EE5;
     font-family: 'Montserrat', sans-serif;
+    padding-top: 2vh;
 
     body.dark & {
         color: #FFFFFF;
@@ -224,7 +227,11 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     font-size:1.5em;
     line-height: 1.5em;
 }
-  
+
+#noGifo{
+    color: #5ED7C6;
+}
+
 .gifos {
     color: #5ED7C6;
     font-family: 'Montserrat', sans-serif;
@@ -241,7 +248,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     background: #FFFFFF;
     border: 1px solid #572EE5;
     border-radius: 2em;
-    width: 100%;
+    width: initial;
     height: 3em;
     padding: 1em;
     display: flex;
@@ -300,6 +307,12 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     }
 }
 
+#gif-results{
+    grid-area: gifResults;
+    padding-top: 5vh;
+
+}
+
 .trending{
     grid-area: trending;
     padding: 5vh;
@@ -310,11 +323,20 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     font-weight: 700;
 }
 
+#trending-terms{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .ps{
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
     font-weight: 700;
     color: #572EE5;
+    text-transform: capitalize;
+    padding: 1vw;
+    background: transparent;
+    outline: none;
 
     body.dark & {
         color: #FFFFFF;
@@ -351,13 +373,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     
 }
 
-
-.gifTrending{
-    width: 30vw;
-    height: 20vh; 
-    transition: opacity 2s ease-out; 
-    padding: 0.1vw;
-}
 
 .transparent{
     opacity: 0;
@@ -542,17 +557,13 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
         color: #fff;
     }
 
+
     .trending-gifos{
-        width: 90%;
         padding-bottom: 10vh;
         justify-self: center;
     }
 
-    .gifTrending{
-        width: 30vw;
-        height: 40vh;
-        padding: 1.5vw;
-    }
+    
 
     .fa-angle-left{
         font-size: 3em;
@@ -602,7 +613,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
             }
         }
     }
-
 
     .footer{
         flex-direction: row;

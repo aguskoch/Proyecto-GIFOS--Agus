@@ -1,0 +1,106 @@
+.gifTrending {
+  width: 40vw;
+  height: 28vh;
+  -webkit-transition: opacity 2s ease-out;
+  transition: opacity 2s ease-out;
+  padding: 0.4vw;
+}
+
+.gif-buttons,
+.gif-username,
+.gif-title {
+  opacity: 0;
+}
+
+.gif-wrapper {
+  width: 40vw;
+  height: 28vh;
+}
+
+.gif-wrapper:hover {
+  background-color: #572EE5;
+  cursor: pointer;
+}
+
+.gif-wrapper:hover .gif-buttons,
+.gif-wrapper:hover .gif-username,
+.gif-wrapper:hover .gif-title {
+  opacity: 100%;
+}
+
+.gif-wrapper:hover .gifTrending {
+  opacity: 50%;
+}
+
+.gif-username,
+.gif-title {
+  -webkit-transform: translate(1vw, -8vh);
+          transform: translate(1vw, -8vh);
+  color: #FFFFFF;
+  line-height: 3vh;
+}
+
+.gif-username {
+  font-weight: 200;
+}
+
+.gif-title {
+  font-weight: 900;
+}
+
+.gif-buttons {
+  z-index: 1;
+  margin: 0 2vw -10vh 2vw;
+  position: relative;
+  float: right;
+}
+
+.gif-buttons > button {
+  padding: 1vh 1vw 1vh 1vw;
+  background: #dfdfdf;
+  border-radius: 6px;
+}
+
+.gif-buttons > button:hover {
+  background: #FFFFFF;
+}
+
+.fa-heart,
+.fa-download,
+.fa-expand-alt {
+  color: #572EE5;
+}
+
+#gif-results {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-auto-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 800px) {
+  .gifTrending {
+    width: 25vw;
+    height: 35vh;
+  }
+  .gif-wrapper {
+    height: 35vh;
+    width: 25vw;
+  }
+  #gif-results {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    grid-auto-flow: row;
+  }
+}
+/*# sourceMappingURL=gifwrapper.css.map */
