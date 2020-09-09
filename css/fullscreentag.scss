@@ -9,55 +9,53 @@
     z-index: 5000;
   }
 .flex-container-center {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    "... ... cross-full-screen"
+    "btn-bw-carrousel-fullscreen gifTrending-fullscreen btn-fw-carrousel-fullscreen"
+    "info-full-screen ... gif-btn-full-screen";
     justify-content: center;
     align-items:center;
-  }
-.cross{
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 15px;
-    height: 15px;
-    background: url('../img/button-close.svg') no-repeat center rgba(255,255,255,0.90);
-    background-size: 15px;
 }
-.image{
+.contract{
+    grid-area: cross-full-screen;
+}
+
+#btn-bw-carrousel-fullscreen{
+    grid-area: btn-bw-carrousel-fullscreen;
+}
+.gifTrending-fullscreen{
     width: 318px;
     height: 245;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    grid-area: gifTrending-fullscreen;
     margin: 10px 0;
 } 
-.detalle{
-    position: absolute;
-    overflow: hidden;
-    top: 70%;
-    left: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
+
+#btn-fw-carrousel-fullscreen{
+    grid-area: btn-fw-carrousel-fullscreen;
 }
 
-.acciones{
-    position: absolute;
-    overflow: hidden;
-    top: 70%;
-    right: 10%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: flex-end;
-    width: 150px;
+.info-full-screen{
+    grid-area:info-full-screen;
+
+    & > .gif-username, .gif-title{
+        color: #000000;
+        opacity: 100%;
+        transform: none;
+    }
+}
+
+.gif-btn-full-screen{
+    grid-area: gif-btn-full-screen;
 }
 
 .hidden {
     display: none;
 }
+
 
 
 @media screen and (min-width: 800px){

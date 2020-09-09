@@ -56,12 +56,16 @@ function showSearchGif (dataG, erase = true){
                     <button><i class="fas fa-download"></i></button>
                     <button class="expand"><i class="fas fa-expand-alt"></i></button>
                 </div>
-                <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
-                <h4 class="gif-username">${dataG[e].username}</h4>
-                <p class="gif-title">${dataG[e].title}</p>`
+                <div class="information">
+                    <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
+                    <h4 class="gif-username">${dataG[e].username}</h4>
+                    <p class="gif-title">${dataG[e].title}</p>
+                </div>`
+                
             divGif.innerHTML = gifInfo
             gifResult.appendChild(divGif)
+            
         } 
     } 
-    updatePopups()
+    updatePopups(dataG)
 }

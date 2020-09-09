@@ -1,19 +1,26 @@
-function updatePopups(){
+function updatePopups(dataG){
     const fullscreen = document.querySelector(".full-screen")
-    const cross = document.getElementById ("cross-full-screen")
+    const cross = document.getElementsByClassName ("contract")
     const popup = document.getElementsByClassName('expand');
     console.log(popup)
 
-    for (var i = 0 ; i < popup.length; i++) {
+    for (let i = 0 ; i < popup.length; i++) {
         popup[i].addEventListener('click' , showPopup)
     }
 
-    function closePopup(){
-        fullscreen.classList.add('hidden');
+    function showPopup(dataG){  
+        fullscreen.classList.remove('hidden');
+        const gifusernamefullscreen = document.getElementsByClassName ("gif-username-full-screen")
+        for (let e = 0; e < gifusernamefullscreen.length; e++){
+            gifusernamefullscreen =+ dataG[e].username;
+        }
     }
 
-    function showPopup(){  
-        fullscreen.classList.remove('hidden');
+    for (let o = 0; o < cross.length; o++){
+        cross[o].addEventListener("click", closePopup)
+    }
+    function closePopup(){
+        fullscreen.classList.add('hidden');
     }
 }
 updatePopups()
