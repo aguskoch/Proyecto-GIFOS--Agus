@@ -55,13 +55,15 @@
   float: right;
 }
 
-.gif-buttons > button {
+.gif-buttons > button,
+.gif-btn-full-screen > button {
   padding: 1vh 1vw 1vh 1vw;
   background: #dfdfdf;
   border-radius: 6px;
 }
 
-.gif-buttons > button:hover {
+.gif-buttons > button:hover,
+.gif-btn-full-screen > button:hover {
   background: #FFFFFF;
 }
 

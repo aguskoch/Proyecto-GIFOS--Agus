@@ -6,15 +6,21 @@
     <script src="https://kit.fontawesome.com/339c328a36.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styleindex2.css">
     <link rel="stylesheet" href="css/gifwrapper.css">
+    <link rel="stylesheet" href="css/fullscreentag.css">
     <title>Proyecto GIFOS</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <a href="index.html"> 
             <img src="assets/logo-desktop.svg" alt="logo" class="logo" id="logo-light"/>
             <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
-        
         </a>
+
+        <div class="sticky-search-bar" id="sticky-search-bar-id">
+            <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word-sticky">
+            <i id="lupe-sticky" class="fas fa-search"></i>
+        </div>
+
         <nav>
             <div class="menu">
                 <input type="checkbox" id="checkbox" />
@@ -51,10 +57,10 @@
                     <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word">
                     <i id="lupe" class="fas fa-search"></i>
                 </div>
-                    <div class="search-bar active">
-                        <!-- <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text-active"> -->
-                        <i class="fas fa-search lupe-active"></i>
-                    <div class="line-search"></div>
+                <div class="search-bar active">
+                    <!-- <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text-active"> -->
+                    <i class="fas fa-times"></i>
+                <div class="line-search"></div>
                 </div>
             </div>
             
@@ -79,7 +85,7 @@
                     <div class="gif-buttons">
                         <button> <i class="far fa-heart"></i> </button>
                         <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
+                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
                     </div>
                     <img class="gifTrending" id="gifTrending1" alt="gif">
                     <h4 class="gif-username">User</h4>
@@ -89,7 +95,7 @@
                     <div class="gif-buttons">
                         <button> <i class="far fa-heart"></i> </button>
                         <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
+                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
                     </div>
                     <img class="gifTrending" id="gifTrending2" alt="gif">
                     <h4 class="gif-username">User</h4>
@@ -99,17 +105,30 @@
                     <div class="gif-buttons">
                         <button> <i class="far fa-heart"></i> </button>
                         <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
+                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
                     </div>
                     <img class="gifTrending" id="gifTrending3" alt="gif">
                     <h4 class="gif-username">User</h4>
                     <p class="gif-title">GifoTitle</p>
                 </div>
-                <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i></i> </button>
+                <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i> </button>
             </div>
             
             
         </section>
+        <div class="full-screen hidden flex-container-center">
+            <i class="fas fa-times" id="cross-full-screen"></i>
+                <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button>
+                <div class="image">
+                <img class="gifTrending" id="gifTrending3" alt="gif">
+                <h4 class="gif-username">User</h4>
+                <p class="gif-title">GifoTitle</p>
+            <div class="gif-btn-full-screen">
+                <button> <i class="far fa-heart"></i> </button>
+                <button><i class="fas fa-download"></i></button>
+            </div>
+            <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button>
+        </div>
     </main>
 
     <footer class="footer"> 
@@ -122,10 +141,12 @@
         <p>© GIFOS 2020 All Rights Reserved.</p> 
     </footer>
 
-    <script src="javascript/index.js"> </script>
+    <script src="javascript/darkmodetoggle.js"> </script>
     <script src="javascript/searchengine.js"></script>
     <script src="javascript/trendingpanel.js"></script>
     <script src="javascript/trendingterms.js"></script>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/fullscreentag.js"></script>
     
 </body>
 </html>

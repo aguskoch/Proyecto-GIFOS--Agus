@@ -1,3 +1,5 @@
+//*****************************Trending Terms******************************* */
+
 const urlterms = 'https://api.giphy.com/v1/trending/searches?';
 
 async function getTrending(){

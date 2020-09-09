@@ -1,5 +1,7 @@
+//**************************Trending Carousel************************* */
+
 const url = 'https://api.giphy.com/v1/gifs/trending?';
-const apiKey = 'api_key=tvATh5CFvKA1cSqBhf3l9c1nBIDYdsV9&fmt=json';
+const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
 let giphyTrending1 = document.getElementById("gifTrending1");
 let giphyTrending2 = document.getElementById("gifTrending2");

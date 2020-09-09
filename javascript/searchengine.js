@@ -1,20 +1,24 @@
+//*********************Search Bar Functionality********************************* */
 const urlGifs = 'https://api.giphy.com/v1/gifs/search?';
-const apiKeys = 'api_key=tvATh5CFvKA1cSqBhf3l9c1nBIDYdsV9&fmt=json';
 
 
 const lupe = document.getElementById("lupe")
+const lupeSticky = document.getElementById("lupe-sticky")
 lupe.addEventListener("click", searchGif)
+lupeSticky.addEventListener("click", searchGif)
 
 async function searchGif(){
     const searchW = document.getElementById("search-word").value
+    const searchWS = document.getElementById("search-word-sticky").value
     console.log(searchW)
     searchGifWord(searchW)
+    searchGifWord(searchWS)
 }
 
 let showing = 0
-let searchTerm
+let searchTerm 
 async function searchGifWord(searchT, start = 0){
-    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKeys)
+    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)
     const jsonG = await responseG.json()
     searchTerm = searchT
     //console.log(jsonG)
@@ -50,7 +54,7 @@ function showSearchGif (dataG, erase = true){
                 `<div class="gif-buttons">
                     <button> <i class="far fa-heart"></i> </button>
                     <button><i class="fas fa-download"></i></button>
-                    <button><i class="fas fa-expand-alt"></i></button>
+                    <button class="expand"><i class="fas fa-expand-alt"></i></button>
                 </div>
                 <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
                 <h4 class="gif-username">${dataG[e].username}</h4>
@@ -58,5 +62,6 @@ function showSearchGif (dataG, erase = true){
             divGif.innerHTML = gifInfo
             gifResult.appendChild(divGif)
         } 
-    }  
+    } 
+    updatePopups()
 }
