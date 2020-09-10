@@ -34,7 +34,7 @@ ol, ul {
 }
 
 header{
-    padding: 2vh 0 2vh 0;
+    padding: 2vh 4vw 2vh 0;
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -200,13 +200,13 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 .main{
     display:grid;
     grid-template-rows: auto auto auto auto;
-    grid-template-columns: 1fr;
     grid-template-areas: 
     "title"
     "search"
     "gifResults"
     "trending"
     "trending-gifos";
+    width: 100%;
 }
 
 .title {
