@@ -77,7 +77,7 @@
 #gif-results{
     display: grid;
     grid-template-rows: auto auto auto auto auto auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-auto-flow: row;
     justify-content: center;
 }
