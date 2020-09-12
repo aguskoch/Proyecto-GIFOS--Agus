@@ -194,6 +194,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     -moz-box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
     -webkit-box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
     box-shadow: 0 2px 4px 1px rgba(156,175,195,0.55);
+
+    body.dark &{
+        background: rgba(10, 10, 10, 0.95);
+    }
 }
 
 
@@ -377,29 +381,42 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     }
 }
 
-.trending-gifos-carrousel{
+.carousel{
+    display: grid;
+    grid-template-rows: 1fr ;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-areas: 
+    "btn-bw-carrousel slick-track btn-fw-carrousel";
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
     display: flex;
-    flex-flow: row;
     justify-content: center;
-    
+    transition: .5s ease-in-out;
+    grid-area: slick-track;
 }
 
 
-.transparent{
-    opacity: 0;
-}
-
-.opaque{
-    opacity: 1;
+.trending-gifos-carrousel{
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 
 #btn-fw-carrousel{
     background: transparent;
+    grid-area: btn-fw-carrousel;
+
 }
 
 #btn-bw-carrousel{
     background: transparent;
+    grid-area: btn-bw-carrousel;
 }
 
 #btn-fw-carrousel:focus { 

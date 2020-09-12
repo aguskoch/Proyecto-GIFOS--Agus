@@ -79,54 +79,28 @@
         <section class="trending-gifos">
             <h2 class="hs" id="trending-gifos-hs"> Trending GIFOS </h2>
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
-            <div class="trending-gifos-carrousel">
+        
+            <div class="carousel">
                 <button id="btn-bw-carrousel"> <i class="fas fa-angle-left"></i></i> </button>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
+                <div class="trending-gifos-carrousel" id="slick-list">    
+                    <div class="slick-track" id="track">
                     </div>
-                    <img class="gifTrending" id="gifTrending1" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
-                </div>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
-                    </div>
-                    <img class="gifTrending" id="gifTrending2" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
-                </div>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
-                    </div>
-                    <img class="gifTrending" id="gifTrending3" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
                 </div>
                 <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i> </button>
-            </div>
-             
+            </div>     
         </section>
         <div class="full-screen hidden flex-container-center">
-            <button class="contract"><i class="fas fa-times"></i></button>
-            <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button>
+            <button class="contract"><i class="fas fa-times fs"></i></button>
+            <!-- <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button> -->
             <img class="gifTrending-fullscreen" alt="gif">
-            <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button>
+            <!-- <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button> -->
             <div class="info-full-screen">
                 <h4 class="gif-username-full-screen"></h4>
-                <p class="gif-title"></p>
+                <p class="gif-title-full-screen"></p>
             </div>
             <div class="gif-btn-full-screen">
-                <button> <i class="far fa-heart"></i> </button>
-                <button><i class="fas fa-download"></i></button>
+                <button> <i class="far fa-heart fs"></i> </button>
+                <button><i class="fas fa-download fs"></i></button>
             </div>
             
         </div>

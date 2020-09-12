@@ -13,8 +13,8 @@ function showSearch(input) {
 
    if ((input.matches) && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)){
        document.getElementById("sticky-search-bar-id").style.display= "flex";
-   } else {
+    } else {
        document.getElementById("sticky-search-bar-id").style.display= "none";
    }
- }
- window.addEventListener('scroll', showSearch);
+}
+window.addEventListener('scroll', showSearch);

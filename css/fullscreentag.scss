@@ -7,7 +7,7 @@
     left: 0;
     background: rgba(255,255,255,0.90);
     z-index: 5000;
-  }
+}
 .flex-container-center {
     display: grid;
     grid-template-rows: auto auto auto;
@@ -21,14 +21,27 @@
 }
 .contract{
     grid-area: cross-full-screen;
+    background: none;
+    padding-top: 1em;
+    outline: none;
 }
+
+.fa-times{
+    &:hover{
+        border: 1px solid #572EE5;
+        background: #572EE5;
+        color: #ffffff;
+            
+    }
+}
+
 
 #btn-bw-carrousel-fullscreen{
     grid-area: btn-bw-carrousel-fullscreen;
 }
 .gifTrending-fullscreen{
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0;
     grid-area: gifTrending-fullscreen;
 } 
@@ -39,6 +52,8 @@
 
 .info-full-screen{
     grid-area:info-full-screen;
+    padding-left: 1vw;
+    justify-self: center;
 
     & > .gif-username, .gif-title{
         color: #000000;
@@ -49,25 +64,34 @@
 
 .gif-btn-full-screen{
     grid-area: gif-btn-full-screen;
+    & > button{
+        outline: none;
+        background: none;
+        &:hover > .fs:hover{
+            border: 1px solid #572EE5;
+            background: #572EE5;
+            color: #ffffff; 
+        }
+    }
+}
+
+.fs{
+    padding: 1em;
 }
 
 .hidden {
     display: none;
 }
 
+.gif-username-full-screen{
+    font-weight: 200;
+}
 
-
+.gif-title-full-screen{
+    font-weight: 900;
+}
 @media screen and (min-width: 800px){
-    .detalle{
-        position: absolute;
-        overflow: hidden;
-        top: 70%;
-        left: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-content: flex-start;
+    .gifTrending-fullscreen{
+        height: 60vh;
     }
-
-    
 }

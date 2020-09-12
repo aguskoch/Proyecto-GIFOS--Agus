@@ -1,56 +1,103 @@
-//**************************Trending Carousel************************* */
+//**************************Trending Carousel Desktop************************* */
 
 const url = 'https://api.giphy.com/v1/gifs/trending?';
 const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
-let giphyTrending1 = document.getElementById("gifTrending1");
-let giphyTrending2 = document.getElementById("gifTrending2");
-let giphyTrending3 = document.getElementById("gifTrending3");
-let urls = "";
 
 async function getUrls(){
   const response = await fetch(url+apiKey);
   const json = await response.json();
-  //console.log(json)
-  return json.data.map(image => image.images.original.url);
+  let dataP = json.data
+  console.log(dataP)
+  showTrendingPanel(dataP.slice(0,10))
 }
-getUrls().then(images => {
-  urls = images;
-  giphyTrending1.src = images[0];
-  giphyTrending2.src = images[1];
-  giphyTrending3.src = images[2];
-})
+getUrls()
+
+function showTrendingPanel (dataP){
+  for(let p = 0; p < dataP.length; p++){
+    const gifT = document.createElement("div");
+    gifT.setAttribute("class", "gif-wrapper")
+    const gifInfoT =
+            `<div class="gif-buttons">
+                <button> <i class="far fa-heart"></i> </button>
+                <button><i class="fas fa-download"></i></button>
+                <button class="expand"><i class="fas fa-expand-alt"></i></button>
+              </div>
+              <img class="gifTrending" src=${dataP[p].images.original.url} alt="gif">
+              <h4 class="gif-username">${dataP[p].username}</h4>
+              <p class="gif-title">${dataP[p].title}</p>`
+    gifT.innerHTML = gifInfoT
+    track.appendChild(gifT)
+    
+  } 
+  updatePopups(dataP)
+} 
+
 
 
 const btnFwCarrousel = document.getElementById("btn-fw-carrousel");
-btnFwCarrousel.addEventListener("click", cyclingCF)
-
-let count = 0;
-function cyclingCF(){
-  count+=3
-  if(count>=24){
-    count = 0;
-  }
-  //giphyTrending1.classList.toggle('transparent');
-  giphyTrending1.src = urls[count];
-  giphyTrending2.src = urls[count+1];
-  giphyTrending3.src = urls[count+2];
-
-  //giphyTrending1.classList.toggle('opaque');
-}
-
-
+btnFwCarrousel.addEventListener("click", () => Move(1))
 const btnBwCarrousel2 = document.getElementById("btn-bw-carrousel");
-btnBwCarrousel2.addEventListener("click", cyclingCB)
-function cyclingCB(){
-  count-=3
-  if(count<0){
-    count = 21;
-  }
-  giphyTrending1.src = urls[count];
-  giphyTrending2.src = urls[count+1];
-  giphyTrending3.src = urls[count+2];
+btnBwCarrousel2.addEventListener("click", () => Move(2))
 
+
+function Move(value){
+    const track = document.getElementById('track');
+    const gifWrapperAll = document.querySelectorAll (".gif-wrapper")
+    const slickList = document.getElementById('slick-list');
+    const slickWidth = gifWrapperAll[0].offsetWidth;
+    const listWidth = slickList.offsetWidth;
+    const trackWidth = track.offsetWidth;
+
+    track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0, -2) * -1);
+    if(leftPosition < (trackWidth - listWidth) && value == 2) {
+      track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
+    } else if(leftPosition > 0 && value == 1) {
+      track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
+    }
 }
 
 
+
+//*******************************Trending Carousel Mobile************************** */
+
+const trackMobile = document.querySelector(".slick-track");
+const carouselMobile= document.querySelector(".carousel")
+let initialPosition = null;
+let moving = false;
+let transform = 0;
+
+const gestureStart = (e) => {
+  initialPosition = e.pageX;
+  moving = true;
+  const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+  console.log(transformMatrix)
+  if (transformMatrix !== 'none') {
+    transform = parseInt(transformMatrix.split(',')[4].trim());
+  }
+}
+
+const gestureMove = (e) => {
+  if (moving) {
+    const currentPosition = e.pageX;
+    const diff = currentPosition - initialPosition;
+    trackMobile.style.transform = `translateX(${transform + diff}px)`;  
+  }
+};
+
+const gestureEnd = (e) => {
+  moving = false;
+}
+carouselMobile.addEventListener('touchdown', gestureStart);
+
+carouselMobile.addEventListener('touchmove', gestureMove);
+
+carouselMobile.addEventListener('touchup', gestureEnd);  
+
+carouselMobile.addEventListener('touchup', gestureEnd);  
+  
+carouselMobile.addEventListener('mousedown', gestureStart);
+
+carouselMobile.addEventListener('mousemove', gestureMove);
+
+carouselMobile.addEventListener('mouseup', gestureEnd);  

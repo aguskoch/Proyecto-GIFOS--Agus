@@ -1,19 +1,32 @@
 function updatePopups(dataG){
     const fullscreen = document.querySelector(".full-screen")
     const cross = document.getElementsByClassName ("contract")
-    const popup = document.getElementsByClassName('expand');
-    console.log(popup)
+    const gifWrappers = document.getElementsByClassName('gif-wrapper');
+    //console.log(gifWrappers)
 
-    for (let i = 0 ; i < popup.length; i++) {
-        popup[i].addEventListener('click' , showPopup)
+    for (let i = 0 ; i < gifWrappers.length; i++) {
+        let popup = gifWrappers[i].getElementsByClassName("expand");         
+        popup[0].addEventListener('click', () => showPopup(gifWrappers[i]))
     }
 
-    function showPopup(dataG){  
+    function showPopup(gifWrapper){  
         fullscreen.classList.remove('hidden');
-        const gifusernamefullscreen = document.getElementsByClassName ("gif-username-full-screen")
-        for (let e = 0; e < gifusernamefullscreen.length; e++){
-            gifusernamefullscreen =+ dataG[e].username;
-        }
+        //Get image from Gif-Wrapper
+        let image = gifWrapper.getElementsByClassName("gifTrending")[0].currentSrc
+        let gifTrendingfullscreen = document.getElementsByClassName ("gifTrending-fullscreen")[0]
+        gifTrendingfullscreen.src = image;
+
+        //Get title from Gif-Wrapper
+        let title = gifWrapper.getElementsByClassName("gif-title")[0].innerText
+        let gifTitleFullScreen = document.getElementsByClassName ("gif-title-full-screen")[0]
+        gifTitleFullScreen.innerText = title
+
+        //Get Username from Gif-Wrapper
+        let username = gifWrapper.getElementsByClassName("gif-username")[0].innerText
+        let gifUsernameFullScreen = document.getElementsByClassName ("gif-username-full-screen")[0]
+        gifUsernameFullScreen.innerText = username
+
+
     }
 
     for (let o = 0; o < cross.length; o++){

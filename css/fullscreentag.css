@@ -29,6 +29,15 @@
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: cross-full-screen;
+  background: none;
+  padding-top: 1em;
+  outline: none;
+}
+
+.fa-times:hover {
+  border: 1px solid #572EE5;
+  background: #572EE5;
+  color: #ffffff;
 }
 
 #btn-bw-carrousel-fullscreen {
@@ -39,7 +48,7 @@
 
 .gifTrending-fullscreen {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
@@ -56,6 +65,9 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: info-full-screen;
+  padding-left: 1vw;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .info-full-screen > .gif-username, .info-full-screen .gif-title {
@@ -71,28 +83,36 @@
   grid-area: gif-btn-full-screen;
 }
 
+.gif-btn-full-screen > button {
+  outline: none;
+  background: none;
+}
+
+.gif-btn-full-screen > button:hover > .fs:hover {
+  border: 1px solid #572EE5;
+  background: #572EE5;
+  color: #ffffff;
+}
+
+.fs {
+  padding: 1em;
+}
+
 .hidden {
   display: none;
 }
 
+.gif-username-full-screen {
+  font-weight: 200;
+}
+
+.gif-title-full-screen {
+  font-weight: 900;
+}
+
 @media screen and (min-width: 800px) {
-  .detalle {
-    position: absolute;
-    overflow: hidden;
-    top: 70%;
-    left: 30%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
+  .gifTrending-fullscreen {
+    height: 60vh;
   }
 }
 /*# sourceMappingURL=fullscreentag.css.map */

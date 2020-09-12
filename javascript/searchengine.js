@@ -51,17 +51,16 @@ function showSearchGif (dataG, erase = true){
             const divGif = document.createElement("div");
             divGif.setAttribute("class", "gif-wrapper")
             const gifInfo =
-                `<div class="gif-buttons">
-                    <button> <i class="far fa-heart"></i> </button>
-                    <button><i class="fas fa-download"></i></button>
-                    <button class="expand"><i class="fas fa-expand-alt"></i></button>
-                </div>
-                <div class="information">
-                    <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
-                    <h4 class="gif-username">${dataG[e].username}</h4>
-                    <p class="gif-title">${dataG[e].title}</p>
-                </div>`
-                
+                    `<div class="gif-buttons">
+                        <button> <i class="far fa-heart"></i> </button>
+                        <button><i class="fas fa-download"></i></button>
+                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
+                    </div>
+                    <div class="information">
+                        <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
+                        <h4 class="gif-username">${dataG[e].username}</h4>
+                        <p class="gif-title">${dataG[e].title}</p>
+                    </div>`
             divGif.innerHTML = gifInfo
             gifResult.appendChild(divGif)
             
