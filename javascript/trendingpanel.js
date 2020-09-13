@@ -67,37 +67,46 @@ let initialPosition = null;
 let moving = false;
 let transform = 0;
 
-const gestureStart = (e) => {
-  initialPosition = e.pageX;
-  moving = true;
-  const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
-  console.log(transformMatrix)
-  if (transformMatrix !== 'none') {
-    transform = parseInt(transformMatrix.split(',')[4].trim());
+if(screen.innerWidth <=800){
+  const gestureStart = (e) => {
+    initialPosition = e.pageX;
+    moving = true;
+    const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+    if (transformMatrix !== 'none') {
+      transform = parseInt(transformMatrix.split(',')[4].trim());
+    }
   }
-}
-
-const gestureMove = (e) => {
-  if (moving) {
-    const currentPosition = e.pageX;
-    const diff = currentPosition - initialPosition;
-    trackMobile.style.transform = `translateX(${transform + diff}px)`;  
-  }
-};
-
-const gestureEnd = (e) => {
-  moving = false;
-}
-carouselMobile.addEventListener('touchdown', gestureStart);
-
-carouselMobile.addEventListener('touchmove', gestureMove);
-
-carouselMobile.addEventListener('touchup', gestureEnd);  
-
-carouselMobile.addEventListener('touchup', gestureEnd);  
+  const gestureMove = (e) => {
+    if (moving) {
+      const currentPosition = e.pageX;
+      const diff = currentPosition - initialPosition;
+      trackMobile.style.transform = `translateX(${transform + diff}px)`;  
+    }
+  };
   
-carouselMobile.addEventListener('mousedown', gestureStart);
+  const gestureEnd = (e) => {
+    moving = false;
+  }
 
-carouselMobile.addEventListener('mousemove', gestureMove);
+  if (window.PointerEvent) {
+    window.addEventListener('pointerdown', gestureStart);
+  
+    window.addEventListener('pointermove', gestureMove);
+  
+    window.addEventListener('pointerup', gestureEnd);  
+  }else{
+    window.addEventListener('touchdown', gestureStart);
+  
+    window.addEventListener('touchmove', gestureMove);
+  
+    window.addEventListener('touchup', gestureEnd);  
+  
+  }
 
-carouselMobile.addEventListener('mouseup', gestureEnd);  
+}
+
+
+
+
+
+

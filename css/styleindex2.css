@@ -214,9 +214,9 @@ body.dark .floating-nav {
 .main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: auto auto auto auto;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas: "title" "search" "gifResults" "trending" "trending-gifos";
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+      grid-template-areas: "title" "search" "gifResults" "seeMore" "trending" "trending-gifos";
   width: 100%;
 }
 
@@ -363,8 +363,20 @@ body.dark .fa-search {
   padding-top: 5vh;
 }
 
-.trending {
+.seeMore {
   -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: seeMore;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trending {
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: trending;
   padding: 5vh;
@@ -403,7 +415,7 @@ body.dark .ps {
 }
 
 .trending-gifos {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: trending-gifos;
   background: #F3F5F8;

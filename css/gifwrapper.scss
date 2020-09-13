@@ -13,7 +13,7 @@
 }
 
 .gif-wrapper{
-    //width: 100%;
+    width: 40vw;
     height: 20vh;
 }
 
@@ -72,14 +72,40 @@
     color: #572EE5;
 }
 
-
-
 #gif-results{
     display: grid;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: auto auto;
     grid-auto-flow: row;
     justify-content: center;
+}
+
+#gifMoreBtn{
+    margin-top: 4vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #572EE5;
+    background: none;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1em;
+    outline: none;
+
+    &:hover {
+        color: #ffffff;
+        background: #572EE5;
+    }
+
+    body.dark & {
+        color: #ffffff;
+        border: 1px solid #ffffff;
+    }
+
+    body.dark &:hover{
+        color: #000000;
+        background: #ffffff;
+        border: 1px solid #ffffff;
+    }
 }
 
 
@@ -106,5 +132,6 @@
         font-size: 1em;
         line-height: 3vh;
     }
+
 
 }

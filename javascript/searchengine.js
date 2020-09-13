@@ -33,6 +33,7 @@ function seeMore(){
 }
 
 const gifResult = document.getElementById("gif-results");
+const seeMoreBtn = document.querySelector(".seeMore")
 function showSearchGif (dataG, erase = true){
     if (erase) {
         gifResult.innerHTML = ""
@@ -64,7 +65,16 @@ function showSearchGif (dataG, erase = true){
             divGif.innerHTML = gifInfo
             gifResult.appendChild(divGif)
             
-        } 
+        }
+        console.log(showing)
+        if(showing < 12){
+            const divSearch = document.createElement("button")
+            divSearch.setAttribute("id", "gifMoreBtn")
+            divSearch.innerText = "VER MÁS"
+            seeMoreBtn.appendChild(divSearch)
+            const moreBtn = document.getElementById("gifMoreBtn")
+            moreBtn.addEventListener("click", seeMore)
+        }
     } 
     updatePopups(dataG)
 }

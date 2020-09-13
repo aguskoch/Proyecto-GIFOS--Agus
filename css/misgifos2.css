@@ -42,38 +42,30 @@
   padding-bottom: 4vh;
 }
 
-#misgifos-search-bar {
-  width: 20vw;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body.dark #misgifos-search-bar:hover {
-  background: #ffffff;
-}
-
-#misgifos-search-bar:hover {
-  background: #572EE5;
-}
-
 #misgifos-button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #572EE5;
   background: none;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  padding: 1em;
 }
 
 #misgifos-button:hover {
   color: #ffffff;
+  background: #572EE5;
 }
 
 body.dark #misgifos-button {
   color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 body.dark #misgifos-button:hover {
   color: #000000;
+  background: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 #misgifos-icon {

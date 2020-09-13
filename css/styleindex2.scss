@@ -203,11 +203,12 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 .main{
     display:grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas: 
     "title"
     "search"
     "gifResults"
+    "seeMore"
     "trending"
     "trending-gifos";
     width: 100%;
@@ -328,6 +329,12 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
 }
 
+.seeMore{
+    grid-area: seeMore;
+    display: flex; 
+    justify-content: center;
+}
+
 .trending{
     grid-area: trending;
     padding: 5vh;
@@ -434,6 +441,8 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 .fa-angle-right{
     display: none;
 }
+
+
 
 .footer{ 
     display: flex;
