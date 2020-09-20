@@ -26,8 +26,13 @@
     size: 2em;
 }
 
-.favorites-images{
+#favorites-images{
     grid-area: favorites-images;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: auto auto;
+    grid-auto-flow: row;
+    justify-content: center;
 }
 
 
@@ -80,5 +85,12 @@
 @media screen and (min-width: 800px){
     #favorites-search-bar{
         width: 15vw;
+    }
+
+    #favorites-images{
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: auto auto auto;
+        grid-auto-flow: row;
     }
 }

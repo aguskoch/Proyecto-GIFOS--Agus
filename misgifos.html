@@ -10,12 +10,18 @@
     <title>Mis GIFOS </title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <a href="index.html"> 
             <img src="assets/logo-desktop.svg" alt="logo" class="logo" id="logo-light"/>
             <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
         
         </a>
+
+        <div class="search-box" id="sticky-search-bar-id">
+            <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word-sticky">
+            <i id="lupe-sticky" class="fas fa-search"></i>
+        </div>
+
         <nav>
             <div class="menu">
                 <input type="checkbox" id="checkbox" />
@@ -60,43 +66,31 @@
         <section class="trending-gifos">
             <h2 class="hs" id="trending-gifos-hs"> Trending GIFOS </h2>
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
-            <div class="trending-gifos-carrousel">
-                <button id="btn-bw-carrousel"> <i class="fas fa-angle-left"></i></i> </button>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
+        
+            <div class="carousel">
+                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i></i> </button>
+                <div class="trending-gifos-carrousel" id="slick-list">    
+                    <div class="slick-track" id="track">
                     </div>
-                    <img class="gifTrending" id="gifTrending1" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
                 </div>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
-                    </div>
-                    <img class="gifTrending" id="gifTrending2" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
-                </div>
-                <div class="gif-wrapper">
-                    <div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
-                        <button><i class="fas fa-expand-alt"></i></button>
-                    </div>
-                    <img class="gifTrending" id="gifTrending3" alt="gif">
-                    <h4 class="gif-username">User</h4>
-                    <p class="gif-title">GifoTitle</p>
-                </div>
-                <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i></i> </button>
+                <button id="btn-fw-carrousel"> <i id="next" class="fas fa-angle-right"></i> </button>
+            </div>     
+        </section>
+        <div class="full-screen hidden flex-container-center">
+            <button class="contract"><i class="fas fa-times fs"></i></button>
+            <!-- <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button> -->
+            <img class="gifTrending-fullscreen" alt="gif">
+            <!-- <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button> -->
+            <div class="info-full-screen">
+                <h4 class="gif-username-full-screen"></h4>
+                <p class="gif-title-full-screen"></p>
+            </div>
+            <div class="gif-btn-full-screen">
+                <button class="save-fav-full-screen"> <i class="far fa-heart fs"></i> </button>
+                <button class="download-full-screen"><i class="fas fa-download fs"></i></button>
             </div>
             
-            
-        </section>
+        </div>
     </main>
 
     <footer class="footer"> 
@@ -110,6 +104,13 @@
     </footer>
     
     <script src="javascript/darkmodetoggle.js"> </script>
+    <script src="javascript/searchengine.js"></script>
+    <script src="javascript/searchsuggestions.js"></script>
     <script src="javascript/trendingpanel.js"></script>
+    <script src="javascript/trendingterms.js"></script>
+    <script src="javascript/navbar.js"></script>
+    <script src="javascript/fullscreentag.js"></script>
+    <script src="javascript/favorites.js"></script>
+    <script src="javascript/download.js"></script>
 </body>
 </html>

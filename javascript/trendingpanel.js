@@ -1,4 +1,4 @@
-//**************************Trending Carousel Desktop************************* */
+//**************************Trending Carousel *********************************** */
 
 const url = 'https://api.giphy.com/v1/gifs/trending?';
 const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
@@ -19,8 +19,8 @@ function showTrendingPanel (dataP){
     gifT.setAttribute("class", "gif-wrapper")
     const gifInfoT =
             `<div class="gif-buttons">
-                <button> <i class="far fa-heart"></i> </button>
-                <button><i class="fas fa-download"></i></button>
+                <button class="save-fav"> <i class="far fa-heart"></i> </button>
+                <button class="download"><i class="fas fa-download"></i></button>
                 <button class="expand"><i class="fas fa-expand-alt"></i></button>
               </div>
               <img class="gifTrending" src=${dataP[p].images.original.url} alt="gif">
@@ -31,6 +31,8 @@ function showTrendingPanel (dataP){
     
   } 
   updatePopups(dataP)
+  favorites(dataP)
+  downloadGif(dataP)
 } 
 
 
@@ -58,52 +60,6 @@ function Move(value){
 }
 
 
-
-//*******************************Trending Carousel Mobile************************** */
-
-const trackMobile = document.querySelector(".slick-track");
-const carouselMobile= document.querySelector(".carousel")
-let initialPosition = null;
-let moving = false;
-let transform = 0;
-
-if(screen.innerWidth <=800){
-  const gestureStart = (e) => {
-    initialPosition = e.pageX;
-    moving = true;
-    const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
-    if (transformMatrix !== 'none') {
-      transform = parseInt(transformMatrix.split(',')[4].trim());
-    }
-  }
-  const gestureMove = (e) => {
-    if (moving) {
-      const currentPosition = e.pageX;
-      const diff = currentPosition - initialPosition;
-      trackMobile.style.transform = `translateX(${transform + diff}px)`;  
-    }
-  };
-  
-  const gestureEnd = (e) => {
-    moving = false;
-  }
-
-  if (window.PointerEvent) {
-    window.addEventListener('pointerdown', gestureStart);
-  
-    window.addEventListener('pointermove', gestureMove);
-  
-    window.addEventListener('pointerup', gestureEnd);  
-  }else{
-    window.addEventListener('touchdown', gestureStart);
-  
-    window.addEventListener('touchmove', gestureMove);
-  
-    window.addEventListener('touchup', gestureEnd);  
-  
-  }
-
-}
 
 
 

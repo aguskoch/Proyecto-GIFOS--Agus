@@ -16,7 +16,7 @@
             <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
         </a>
 
-        <div class="sticky-search-bar" id="sticky-search-bar-id">
+        <div class="search-box" id="sticky-search-bar-id">
             <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word-sticky">
             <i id="lupe-sticky" class="fas fa-search"></i>
         </div>
@@ -52,16 +52,13 @@
 
         <section class="search">
             <img class="image-search" src="assets/ilustra_header.svg" alt="image-people">
-            <div>
-                <div class="search-bar">
+            <div class="search-box">
+                <div>
                     <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word">
                     <i id="lupe" class="fas fa-search"></i>
                 </div>
-                <div class="search-bar active">
-                    <!-- <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text-active"> -->
-                    <i class="fas fa-times"></i>
-                <div class="line-search"></div>
-                </div>
+                
+                <div id="suggestions"></div>
             </div>
             
         </section>
@@ -82,12 +79,12 @@
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
         
             <div class="carousel">
-                <button id="btn-bw-carrousel"> <i class="fas fa-angle-left"></i></i> </button>
+                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i></i> </button>
                 <div class="trending-gifos-carrousel" id="slick-list">    
                     <div class="slick-track" id="track">
                     </div>
                 </div>
-                <button id="btn-fw-carrousel"> <i class="fas fa-angle-right"></i> </button>
+                <button id="btn-fw-carrousel"> <i id="next" class="fas fa-angle-right"></i> </button>
             </div>     
         </section>
         <div class="full-screen hidden flex-container-center">
@@ -100,8 +97,8 @@
                 <p class="gif-title-full-screen"></p>
             </div>
             <div class="gif-btn-full-screen">
-                <button> <i class="far fa-heart fs"></i> </button>
-                <button><i class="fas fa-download fs"></i></button>
+                <button class="save-fav-full-screen"> <i class="far fa-heart fs"></i> </button>
+                <button class="download-full-screen"><i class="fas fa-download fs"></i></button>
             </div>
             
         </div>
@@ -119,10 +116,14 @@
 
     <script src="javascript/darkmodetoggle.js"> </script>
     <script src="javascript/searchengine.js"></script>
+    <script src="javascript/searchsuggestions.js"></script>
     <script src="javascript/trendingpanel.js"></script>
     <script src="javascript/trendingterms.js"></script>
     <script src="javascript/navbar.js"></script>
+    <script src="javascript/searchsticky.js"></script>
     <script src="javascript/fullscreentag.js"></script>
+    <script src="javascript/favorites.js"></script>
+    <script src="javascript/download.js"></script>
     
 </body>
 </html>

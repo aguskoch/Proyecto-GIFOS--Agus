@@ -1,6 +1,6 @@
 .gifTrending {
-  width: 40vw;
-  height: 20vh;
+  width: 48vw;
+  height: 30vh;
   -webkit-transition: opacity 2s ease-out;
   transition: opacity 2s ease-out;
   padding: 0.4vw;
@@ -13,8 +13,8 @@
 }
 
 .gif-wrapper {
-  width: 40vw;
-  height: 20vh;
+  width: 48vw;
+  height: 30vh;
 }
 
 .gif-wrapper:hover {
@@ -79,10 +79,19 @@
       grid-template-rows: auto auto auto auto auto auto;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
+      grid-template-areas: "nameGif nameGif";
   grid-auto-flow: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.nameGif {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: nameGif;
+  padding-bottom: 2vh;
 }
 
 #gifMoreBtn {
@@ -130,6 +139,7 @@ body.dark #gifMoreBtn:hover {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
     grid-auto-flow: row;
+        grid-template-areas: "nameGif nameGif nameGif";
   }
   .gif-username,
   .gif-title {

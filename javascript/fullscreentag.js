@@ -1,3 +1,5 @@
+//***************************************FullScreen Tag ************************************************* */
+
 function updatePopups(dataG){
     const fullscreen = document.querySelector(".full-screen")
     const cross = document.getElementsByClassName ("contract")
@@ -26,6 +28,11 @@ function updatePopups(dataG){
         let gifUsernameFullScreen = document.getElementsByClassName ("gif-username-full-screen")[0]
         gifUsernameFullScreen.innerText = username
 
+        let saveFav = document.getElementsByClassName("save-fav-full-screen");
+        saveFav[0].addEventListener('click', () => saveFavorites(gifWrapper))
+
+        let download = document.getElementsByClassName("download-full-screen");
+        download[0].addEventListener('click', () => downloadGif(gifWrapper))
 
     }
 
@@ -35,5 +42,6 @@ function updatePopups(dataG){
     function closePopup(){
         fullscreen.classList.add('hidden');
     }
+
 }
 updatePopups()

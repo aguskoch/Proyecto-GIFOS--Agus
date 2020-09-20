@@ -9,6 +9,7 @@ lupeSticky.addEventListener("click", searchGif)
 
 async function searchGif(){
     const searchW = document.getElementById("search-word").value
+    console.log(searchW)
     const searchWS = document.getElementById("search-word-sticky").value
     console.log(searchW)
     searchGifWord(searchW)
@@ -18,10 +19,9 @@ async function searchGif(){
 let showing = 0
 let searchTerm 
 async function searchGifWord(searchT, start = 0){
-    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)
+    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)//+"&offset="+showing)
     const jsonG = await responseG.json()
     searchTerm = searchT
-    //console.log(jsonG)
     let dataG = jsonG.data
     console.log(dataG)
     showSearchGif(dataG.slice(start, start+12), start == 0)
@@ -29,17 +29,18 @@ async function searchGifWord(searchT, start = 0){
 }
 
 function seeMore(){
-    searchGifWord(searchTerm, showing)
+    searchGifWord(searchTerm,showing)
 }
 
 const gifResult = document.getElementById("gif-results");
 const seeMoreBtn = document.querySelector(".seeMore")
+
 function showSearchGif (dataG, erase = true){
     if (erase) {
         gifResult.innerHTML = ""
     } 
     if (dataG.length == 0){
-        const noGif = document.createElement("div");
+        const noGif = document.createElement("div")
         noGif.setAttribute("class", "noGif")
         const noContent = 
         `<h1 class="hs"> ${searchTerm}
@@ -47,14 +48,22 @@ function showSearchGif (dataG, erase = true){
         <h2 class="secondTab hs" id="noGifo"> Intenta con otra búsqueda. </h2>` 
         noGif.innerHTML = noContent
         gifResult.appendChild(noGif)
-    } else{  
+    } else{
+        const div = document.createElement("div")
+        div.setAttribute("class", "nameGif")
+        const name = document.createElement("h1")
+        name.setAttribute("class", "hs")
+        name.innerText = searchTerm
+        div.appendChild(name)
+        gifResult.appendChild(div)
+
         for(let e = 0; e < dataG.length; e++){
             const divGif = document.createElement("div");
             divGif.setAttribute("class", "gif-wrapper")
             const gifInfo =
                     `<div class="gif-buttons">
-                        <button> <i class="far fa-heart"></i> </button>
-                        <button><i class="fas fa-download"></i></button>
+                        <button class="save-fav"> <i class="far fa-heart"></i> </button>
+                        <button class="download"><i class="fas fa-download"></i></button>
                         <button class="expand"><i class="fas fa-expand-alt"></i></button>
                     </div>
                     <div class="information">
@@ -77,4 +86,6 @@ function showSearchGif (dataG, erase = true){
         }
     } 
     updatePopups(dataG)
+    favorites(dataG)
+    download(dataG)
 }
