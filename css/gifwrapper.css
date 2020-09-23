@@ -1,8 +1,6 @@
 .gifTrending {
   width: 48vw;
   height: 30vh;
-  -webkit-transition: opacity 2s ease-out;
-  transition: opacity 2s ease-out;
   padding: 0.4vw;
 }
 
@@ -19,17 +17,18 @@
 
 .gif-wrapper:hover {
   background-color: #572EE5;
-  cursor: pointer;
+  z-index: 1;
 }
 
 .gif-wrapper:hover .gif-buttons,
 .gif-wrapper:hover .gif-username,
 .gif-wrapper:hover .gif-title {
-  opacity: 100%;
+  opacity: 1;
 }
 
-.gif-wrapper:hover .gifTrending {
-  opacity: 50%;
+.gif-wrapper:hover .gifTrending:hover {
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .gif-username,
@@ -50,7 +49,7 @@
 }
 
 .gif-buttons {
-  z-index: 5000;
+  z-index: 2;
   margin: 0 2vw -10vh 2vw;
   position: relative;
   float: right;
@@ -58,7 +57,7 @@
 
 .gif-buttons > button {
   background: none;
-  z-index: 5000;
+  z-index: 2;
 }
 
 .heart,
