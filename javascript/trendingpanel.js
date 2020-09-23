@@ -19,9 +19,9 @@ function showTrendingPanel (dataP){
     gifT.setAttribute("class", "gif-wrapper")
     const gifInfoT =
             `<div class="gif-buttons">
-                <button class="save-fav"> <img src="/assets/icon-fav-hover.svg" id="heart" class="heart"></button>
-                <button class="download"><img src="/assets/icon-download.svg" class="download-btn"></button>
-                <button class="expand"><img src="/assets/icon-max.svg" class="expand-btn"></button>
+                <button class="save-fav"> <img src="./assets/icon-fav-hover.svg" id="heart" class="heart" alt="icon"></button>
+                <button class="download"><img src="./assets/icon-download.svg" class="download-btn" alt="icon"></button>
+                <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn" alt="icon"></button>
               </div>
               <img class="gifTrending" src=${dataP[p].images.original.url} alt="gif">
               <h4 class="gif-username">${dataP[p].username}</h4>
