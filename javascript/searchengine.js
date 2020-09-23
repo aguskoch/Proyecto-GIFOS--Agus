@@ -60,9 +60,9 @@ function showSearchGif (dataG, erase = true){
             divGif.setAttribute("class", "gif-wrapper")
             const gifInfo =
                     `<div class="gif-buttons">     
-                        <button class="save-fav"> <img src="/assets/icon-fav-hover.svg" id="heart" class="heart"></button>
-                        <button class="download"><img src="/assets/icon-download.svg" class="download-btn"></button>
-                        <button class="expand"><img src="/assets/icon-max.svg" class="expand-btn"></button>
+                        <button class="save-fav"> <img src="./assets/icon-fav-hover.svg" id="heart" class="heart"></button>
+                        <button class="download"><img src="./assets/icon-download.svg" class="download-btn"></button>
+                        <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn"></button>
                     </div>
                     <div class="information">
                         <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
