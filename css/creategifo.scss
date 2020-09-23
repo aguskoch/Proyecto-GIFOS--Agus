@@ -77,9 +77,19 @@
         grid-template-columns: 10% 80% 10%;
         grid-template-areas:
         "sq-1 ... sq-2"
-        "... secondTab ..."
-        "... p-createGifo ..."
+        "... video-container ..."
+        "... video-container ..."
         "sq-3 ... sq-4";
+    }
+
+    #video-container{
+        grid-area: video-container;
+        justify-content: center;
+    }
+
+    video{
+        width:80%;
+        transform: translate(0, -26%);
     }
 
     .p-createGifo{
@@ -169,6 +179,10 @@
         }
     }
 
+    .steps-number--active{
+        background-color: #572EE5 !important;
+        color: #ffffff !important;
+    }
 
     #img-steps-light{
         display: inline;
@@ -197,42 +211,52 @@
         }
     }
 
-    .creategifo-start{
+    .creategifo{
         grid-area: creategifo-start;
         padding: 6vh;
+        justify-self: center;
     }
 
-    #start-button{
+    
+
+    #start,
+    #record, 
+    #finish, 
+    #upload{
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         color: #572EE5;
+        border: 1px solid #572EE5;
+        border-radius: 25px;
         background: none;
-        text-align:center;
-    
-        &:hover{
-            color: #ffffff;
-        }
-
-        body.dark & {
-            color: #ffffff ;
-        }
-    
-    
-        body.dark &:hover{
-            color: #000000;
-        }
-    }
-
-    #creategifo-start-btn{
-        margin: auto;
         width: 10vw;
-        justify-content: center;
+        padding: 1em;
+       
 
-        body.dark &:hover{
-            background: #ffffff ;
+        &:hover, #start-button:hover {
+            color: #ffffff;
+            background: #572EE5;
         }
     
+        body.dark &{
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+    
+        body.dark &:hover, #start-button-hover{
+            color: #000000;
+            background: #ffffff;
+            border: 1px solid #ffffff;
+        }
+        
+        
     }
 
+    .no-display{
+        display: none;
+    }
     
+    .capture-time.timer {
+        display: none;
+    }
 }

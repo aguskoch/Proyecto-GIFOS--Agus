@@ -82,21 +82,31 @@
         grid-template-rows: 10% 40% 40% 10%;
     -ms-grid-columns: 10% 80% 10%;
         grid-template-columns: 10% 80% 10%;
-        grid-template-areas: "sq-1 ... sq-2" "... secondTab ..." "... p-createGifo ..." "sq-3 ... sq-4";
+        grid-template-areas: "sq-1 ... sq-2" "... video-container ..." "... video-container ..." "sq-3 ... sq-4";
+  }
+  #video-container {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: video-container;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  video {
+    width: 80%;
+    -webkit-transform: translate(0, -26%);
+            transform: translate(0, -26%);
   }
   .p-createGifo {
     padding-top: 1vh;
     font-size: 1.2em;
-    -ms-grid-row: 3;
-    -ms-grid-column: 2;
     grid-area: p-createGifo;
   }
   body.dark .p-createGifo {
     color: #ffffff;
   }
   .secondTab {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
     grid-area: secondTab;
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
@@ -196,6 +206,10 @@
     background: #ffffff;
     color: #000000;
   }
+  .steps-number--active {
+    background-color: #572EE5 !important;
+    color: #ffffff !important;
+  }
   #img-steps-light {
     display: inline;
   }
@@ -221,38 +235,61 @@
   body.dark .line {
     border-bottom: 4px solid #ffffff;
   }
-  .creategifo-start {
+  .creategifo {
     -ms-grid-row: 4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-area: creategifo-start;
     padding: 6vh;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
-  #start-button {
+  #start,
+  #record,
+  #finish,
+  #upload {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #572EE5;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
     background: none;
-    text-align: center;
-  }
-  #start-button:hover {
-    color: #ffffff;
-  }
-  body.dark #start-button {
-    color: #ffffff;
-  }
-  body.dark #start-button:hover {
-    color: #000000;
-  }
-  #creategifo-start-btn {
-    margin: auto;
     width: 10vw;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    padding: 1em;
   }
-  body.dark #creategifo-start-btn:hover {
+  #start:hover, #start #start-button:hover,
+  #record:hover,
+  #record #start-button:hover,
+  #finish:hover,
+  #finish #start-button:hover,
+  #upload:hover,
+  #upload #start-button:hover {
+    color: #ffffff;
+    background: #572EE5;
+  }
+  body.dark #start, body.dark
+  #record, body.dark
+  #finish, body.dark
+  #upload {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+  body.dark #start:hover, #start #start-button-hover, body.dark
+  #record:hover,
+  #record #start-button-hover, body.dark
+  #finish:hover,
+  #finish #start-button-hover, body.dark
+  #upload:hover,
+  #upload #start-button-hover {
+    color: #000000;
     background: #ffffff;
+    border: 1px solid #ffffff;
+  }
+  .no-display {
+    display: none;
+  }
+  .capture-time.timer {
+    display: none;
   }
 }
 /*# sourceMappingURL=creategifo.css.map */

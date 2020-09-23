@@ -1,3 +1,4 @@
+
 const searchInput = document.getElementById("search-word");
 const suggestionsPanel = document.getElementById('suggestions');
 

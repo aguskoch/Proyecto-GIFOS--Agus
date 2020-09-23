@@ -45,23 +45,31 @@
             <div class="text-createGifo">
                 <div class="square one"></div>
                 <div class="square two"></div>
-                <h2 class="secondTab hs">Aquí podrás crear tus propios <span class="gifos" > GIFOS </span></h2>
-                <p class="p-createGifo">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)</p>
+                <div id="video-container">
+                    <h2 class="secondTab hs">Aquí podrás crear tus propios <span class="gifos" > GIFOS </span></h2>
+                    <p class="p-createGifo">¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)</p>
+                </div>
                 <div class="square three"></div>
                 <div class="square four"></div>
             </div>
             <div class="steps">
-                <p class="steps-number">1</p>
-                <p class="steps-number">2</p>
-                <p class="steps-number">3</p>
+                <p id="step1" class="steps-number">1</p>
+                <p id="step2" class="steps-number">2</p>
+                <p id="step3" class="steps-number">3</p>
+                <p id="time-capture" class="onDesktop capture-time">Repetir Captura</p>
+                <p id="timer" class="onDesktop capture-time timer"></p>
             </div>
             <img class="image-steps" id="img-steps-light" src="assets/pelicula.svg" alt="pelicula">
             <img class="image-steps" id="img-steps-dark" src="assets/pelicula-modo-noc.svg" alt="pelicula">
             <hr class="line">
-            <div class="creategifo-start"> 
-                <div class= "search-bar" id="creategifo-start-btn"> 
-                    <button id="start-button"> COMENZAR </button>
-                </div>
+            <div class="creategifo"> 
+                <button id="start"> COMENZAR </button>
+                <button id="record" class="button no-display">GRABAR</button>
+                <button id="finish" class="button no-display">FINALIZAR</button>
+                <button id="upload" class="button no-display">DESCARGAR GIFO</button>
+                
+
+            </div>
             </div>
         </section>
 
@@ -78,5 +86,8 @@
     </footer>
 
     <script src="javascript/darkmodetoggle.js"> </script>
+    <script src="javascript/recordgif.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
 </body>
 </html>

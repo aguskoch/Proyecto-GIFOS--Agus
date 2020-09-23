@@ -57,19 +57,25 @@
 }
 
 .gif-buttons > button {
+  background: none;
+}
+
+.heart,
+.download-btn,
+.expand-btn,
+.fa-trash-alt {
+  color: #572EE5;
   padding: 1vh 1vw 1vh 1vw;
   background: #dfdfdf;
+  border: 1px solid #572EE5;
   border-radius: 6px;
 }
 
-.gif-buttons > button:hover {
+.heart:hover,
+.download-btn:hover,
+.expand-btn:hover,
+.fa-trash-alt:hover {
   background: #FFFFFF;
-}
-
-.fa-heart,
-.fa-download,
-.fa-expand-alt {
-  color: #572EE5;
 }
 
 #gif-results {

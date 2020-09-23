@@ -314,6 +314,8 @@ body.dark .search-box, body.dark
 
 .search-bar-text {
   background: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
 }
 
 .search-bar-text-active {
@@ -352,10 +354,36 @@ body.dark .line-search {
 .fa-search {
   color: #572EE5;
   float: right;
+  display: block;
 }
 
 body.dark .fa-search {
   color: #FFFFFF;
+}
+
+#cross-search {
+  color: #572EE5;
+  float: right;
+  display: none;
+}
+
+body.dark #cross-search {
+  color: #FFFFFF;
+}
+
+.option-list {
+  color: #9CAFC3;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  line-height: 2vh;
+  padding-top: 1vh;
+}
+
+.suggest {
+  color: #9CAFC3;
+  float: left;
+  padding-right: 1vw;
 }
 
 #gif-results {

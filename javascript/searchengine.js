@@ -9,11 +9,10 @@ lupeSticky.addEventListener("click", searchGif)
 
 async function searchGif(){
     const searchW = document.getElementById("search-word").value
-    console.log(searchW)
     const searchWS = document.getElementById("search-word-sticky").value
-    console.log(searchW)
     searchGifWord(searchW)
     searchGifWord(searchWS)
+
 }
 
 let showing = 0
@@ -23,7 +22,6 @@ async function searchGifWord(searchT, start = 0){
     const jsonG = await responseG.json()
     searchTerm = searchT
     let dataG = jsonG.data
-    console.log(dataG)
     showSearchGif(dataG.slice(start, start+12), start == 0)
     showing = start + 12
 }
@@ -61,10 +59,10 @@ function showSearchGif (dataG, erase = true){
             const divGif = document.createElement("div");
             divGif.setAttribute("class", "gif-wrapper")
             const gifInfo =
-                    `<div class="gif-buttons">
-                        <button class="save-fav"> <i class="far fa-heart"></i> </button>
-                        <button class="download"><i class="fas fa-download"></i></button>
-                        <button class="expand"><i class="fas fa-expand-alt"></i></button>
+                    `<div class="gif-buttons">     
+                        <button class="save-fav"> <img src="/assets/icon-fav-hover.svg" id="heart" class="heart"></button>
+                        <button class="download"><img src="/assets/icon-download.svg" class="download-btn"></button>
+                        <button class="expand"><img src="/assets/icon-max.svg" class="expand-btn"></button>
                     </div>
                     <div class="information">
                         <img class="gifTrending" alt="gif" src=${dataG[e].images.original.url}>
@@ -75,7 +73,6 @@ function showSearchGif (dataG, erase = true){
             gifResult.appendChild(divGif)
             
         }
-        console.log(showing)
         if(showing < 12){
             const divSearch = document.createElement("button")
             divSearch.setAttribute("id", "gifMoreBtn")
@@ -88,4 +85,46 @@ function showSearchGif (dataG, erase = true){
     updatePopups(dataG)
     favorites(dataG)
     download(dataG)
+}
+
+
+const searchInput = document.getElementById("search-word");
+const suggestionsPanel = document.getElementById('suggestions');
+
+function fnAutoComplete(){
+    searchInput.addEventListener('keyup', async (event) =>{
+    let sug = await getAutoComplete(searchInput.value);
+    const view = `
+      <ul class="suggestions">
+          ${sug.data.map(item => `
+              <li class="option-list"><i class="fa fa-search suggest"></i>${item.name}</li>
+          `).join('')}
+      </ul>
+      `;
+    if(sug.data.length !== 0){
+        suggestionsPanel.innerHTML = view
+    }else{
+        suggestionsPanel.innerHTML = ''
+    }
+
+    let optionList = document.getElementsByClassName("option-list");
+    for (let j = 0; j < optionList.length; j++){
+        console.log(optionList)
+        optionList[j].addEventListener("click", () => suggestion(optionList[j]))
+    }
+
+    function suggestion(optionList){
+        const text = optionList.innerText
+        searchGifWord(text)
+    }
+})
+}
+fnAutoComplete()
+
+async function getAutoComplete(text){
+    console.log(text)
+    const url = 'https://api.giphy.com/v1/gifs/search/tags?api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz&q='+text;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data
 }

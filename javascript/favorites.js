@@ -19,6 +19,9 @@ if(sessionStorage.getItem("fav") != null){
 }
 
 function saveFavorites(gifWrapper){
+    console.log(gifWrapper)
+    let heart1 = document.getElementById("heart1")
+    // heart1.classList.add("active")
     let title = gifWrapper.getElementsByClassName("gif-title")[0].innerText
     let image = gifWrapper.getElementsByClassName("gifTrending")[0].src
     let username = gifWrapper.getElementsByClassName("gif-username")[0].innerText
@@ -26,9 +29,14 @@ function saveFavorites(gifWrapper){
     jsonObject.title = title
     jsonObject.image = image
     jsonObject.username = username
-    array.push(jsonObject)
-    let jsonString = JSON.stringify(array)
-    sessionStorage.setItem("fav", jsonString)
+    if(!array.some(o =>{
+        return jsonObject.image == o.image
+    })){
+        array.push(jsonObject)     
+        let jsonString = JSON.stringify(array)
+        sessionStorage.setItem("fav", jsonString)
+    } 
+    
 
 }
 
