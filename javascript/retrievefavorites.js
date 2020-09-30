@@ -7,19 +7,19 @@ let start = 0
 let showing = 0
 function obtainFavorites(){  
     let favArray = JSON.parse(sessionStorage.getItem("fav"))
-    let favCount = favArray.slice(start, start+12)
     let favoritesResults = document.getElementById("favorites-images")
-    if (favCount == null){
+    if (favArray == null){
         const noFav =
 
         `<div>
-            <img src="assets/icon-fav-sin-contenido.svg" class="noContent-image" alt="icon-misgifos-sincontenido" id="misgifos-icon-noContent">
+            <img src="assets/icon-fav-sin-contenido.svg" class="noContent-image" alt="icon-fav-sincontenido" id="fav-icon-noContent">
             <h2 class="secondTab hs"> "¡Guarda tu primer GIFO en Favoritos 
             para que se muestre aquí!" </h2>
         </div>`
 
         favoritesResults.innerHTML = noFav
     } else{
+        let favCount = favArray.slice(start, start+12)
         for (let i = 0; i < favCount.length; i++){
             const divGif = document.createElement("div");
                 divGif.setAttribute("class", "gif-wrapper")
@@ -30,23 +30,21 @@ function obtainFavorites(){
                             <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn" alt="icon"></button>
                         </div>
                         <div class="information">
-                            <img class="gifTrending" alt="gif" src=${favArray[i].image}>
-                            <h4 class="gif-username">${favArray[i].username}</h4>
-                            <p class="gif-title">${favArray[i].title}</p>
+                            <img class="gifTrending" alt="gif" src=${favCount[i].image}>
+                            <h4 class="gif-username">${favCount[i].username}</h4>
+                            <p class="gif-title">${favCount[i].title}</p>
                         </div>`
                 divGif.innerHTML = gifInfo
                 favoritesResults.appendChild(divGif)
         }
     }
     updatePopups()
-    showing = start + 12
+    start = start + 12
 }
 obtainFavorites()
 
 function seeMore(){
     obtainFavorites()
-    console.log(showing)
-    console.log(start)
 }
 
 function eliminatefavorites(){

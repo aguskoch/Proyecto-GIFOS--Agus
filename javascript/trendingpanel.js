@@ -19,7 +19,7 @@ function showTrendingPanel (dataP){
     gifT.setAttribute("class", "gif-wrapper")
     const gifInfoT =
             `<div class="gif-buttons">
-                <button class="save-fav"> <img src="./assets/icon-fav-hover.svg" id="heart" class="heart" alt="icon"></button>
+                <button class="save-fav"> <img class="heart" id=${dataP[p].id} alt="icon"></button>
                 <button class="download"><img src="./assets/icon-download.svg" class="download-btn" alt="icon"></button>
                 <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn" alt="icon"></button>
               </div>
@@ -32,15 +32,15 @@ function showTrendingPanel (dataP){
   } 
   updatePopups(dataP)
   favorites(dataP)
-  downloadGif(dataP)
+  download()
 } 
 
 
 
 const btnFwCarrousel = document.getElementById("btn-fw-carrousel");
-btnFwCarrousel.addEventListener("click", () => Move(1))
+btnFwCarrousel.addEventListener("click", () => Move(2))
 const btnBwCarrousel2 = document.getElementById("btn-bw-carrousel");
-btnBwCarrousel2.addEventListener("click", () => Move(2))
+btnBwCarrousel2.addEventListener("click", () => Move(1))
 
 
 function Move(value){

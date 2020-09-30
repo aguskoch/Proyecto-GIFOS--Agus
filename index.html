@@ -32,14 +32,14 @@
                         <a class="nav-a" id="dark-mode"> MODO NOCTURNO </a> 
                         <a class="nav-a" id="light-mode" > MODO DIURNO </a>
                     </li>
-                    <hr class="hr">
+                    <li class="hr"></li>
                     <li class="nav-li"> <a id="favorites-link" class="tablinks nav-a" href="favorites.html">  FAVORITOS </a> </li>
-                    <hr class="hr">
-                    <li class="nav-li"> <a class="nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
-                    <hr class="hr">
-                    <a id="link-button" href="creategifo.html">
+                    <li class="hr"></li>
+                    <li class="nav-li"> <a id="misgifos-link" class="nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
+                    <li class="hr"></li>
+                    <li><a id="link-button" href="creategifo.html">
                         <i class="fas fa-plus" id="header-button"></i>
-                    </a>
+                    </a></li>
                 </ul>
             </div>
         </nav>    
@@ -47,7 +47,7 @@
 
     <main class="tab main">
         <section class="title">
-            <h1 class="hs"> Inspírate, busca, guarda, y crea <hr> los mejores <span class= "gifos" > GIFOS </span> </h1>
+            <h1 class="hs"> Inspírate, busca, guarda, y crea los mejores <span class= "gifos" > GIFOS </span> </h1>
         </section>
 
         <section class="search">
@@ -79,7 +79,7 @@
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
         
             <div class="carousel">
-                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i></i> </button>
+                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i> </button>
                 <div class="trending-gifos-carrousel" id="slick-list">    
                     <div class="slick-track" id="track">
                     </div>
@@ -89,16 +89,14 @@
         </section>
         <div class="full-screen hidden flex-container-center">
             <button class="contract"><i class="fas fa-times fs"></i></button>
-            <!-- <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button> -->
-            <img class="gifTrending-fullscreen" alt="gif">
-            <!-- <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button> -->
+            <img src="http://probablyprogramming.com/wp-content/uploads/2009/03/handtinywhite.gif" class="gifTrending-fullscreen" alt="gif">
             <div class="info-full-screen">
                 <h4 class="gif-username-full-screen"></h4>
                 <p class="gif-title-full-screen"></p>
             </div>
             <div class="gif-btn-full-screen">
                 <button class="save-fav-full-screen"> <img src="./assets/icon-fav-hover.svg" class="heart fs" alt="icon"></button>
-                <button class="download-full-screen"><img src="./assets/icon-download.svg" class="download-btn fs" alt="icon"></img></button>
+                <button class="download-full-screen"><img src="./assets/icon-download.svg" class="download-btn fs" alt="icon"></button>
             </div>
             
         </div>

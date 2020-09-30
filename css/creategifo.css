@@ -94,9 +94,7 @@
             justify-content: center;
   }
   video {
-    width: 80%;
-    -webkit-transform: translate(0, -26%);
-            transform: translate(0, -26%);
+    height: 100%;
   }
   .p-createGifo {
     padding-top: 1vh;
@@ -288,8 +286,26 @@
   .no-display {
     display: none;
   }
+  .capture-time {
+    color: #572EE5;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+  body.dark .capture-time {
+    color: #ffffff;
+  }
   .capture-time.timer {
     display: none;
+  }
+  .capture-time:hover {
+    border-bottom: 2px solid #5ED7C6;
   }
 }
 /*# sourceMappingURL=creategifo.css.map */

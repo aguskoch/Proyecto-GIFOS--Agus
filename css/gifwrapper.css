@@ -15,22 +15,6 @@
   height: 30vh;
 }
 
-.gif-wrapper:hover {
-  background-color: #572EE5;
-  z-index: 1;
-}
-
-.gif-wrapper:hover .gif-buttons,
-.gif-wrapper:hover .gif-username,
-.gif-wrapper:hover .gif-title {
-  opacity: 1;
-}
-
-.gif-wrapper:hover .gifTrending:hover {
-  opacity: 0.3;
-  z-index: -1;
-}
-
 .gif-username,
 .gif-title {
   -webkit-transform: translate(1vw, -8vh);
@@ -61,6 +45,7 @@
 }
 
 .heart,
+.heart-active,
 .download-btn,
 .expand-btn,
 .fa-trash-alt {
@@ -72,10 +57,19 @@
 }
 
 .heart:hover,
+.heart-active:hover,
 .download-btn:hover,
 .expand-btn:hover,
 .fa-trash-alt:hover {
   background: #FFFFFF;
+}
+
+.heart {
+  content: url("../assets/icon-fav-hover.svg");
+}
+
+.heart-active {
+  content: url("../assets/icon-fav-active.svg") !important;
 }
 
 #gif-results {
@@ -151,6 +145,19 @@ body.dark #gifMoreBtn:hover {
   .gif-title {
     font-size: 1em;
     line-height: 3vh;
+  }
+  .gif-wrapper:hover {
+    background-color: #572EE5;
+    z-index: 1;
+  }
+  .gif-wrapper:hover .gif-buttons,
+  .gif-wrapper:hover .gif-username,
+  .gif-wrapper:hover .gif-title {
+    opacity: 1;
+  }
+  .gif-wrapper:hover .gifTrending:hover {
+    opacity: 0.3;
+    z-index: -1;
   }
 }
 /*# sourceMappingURL=gifwrapper.css.map */

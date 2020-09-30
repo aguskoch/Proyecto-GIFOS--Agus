@@ -4,11 +4,20 @@ function updatePopups(dataG){
     const fullscreen = document.querySelector(".full-screen")
     const cross = document.getElementsByClassName ("contract")
     const gifWrappers = document.getElementsByClassName('gif-wrapper');
-    //console.log(gifWrappers)
 
-    for (let i = 0 ; i < gifWrappers.length; i++) {
-        let popup = gifWrappers[i].getElementsByClassName("expand");         
-        popup[0].addEventListener('click', () => showPopup(gifWrappers[i]))
+    
+    let input = window.matchMedia("(min-width: 800px)")
+    if(input.matches){
+        for (let i = 0 ; i < gifWrappers.length; i++) {
+            let popup = gifWrappers[i].getElementsByClassName("expand");         
+            popup[0].addEventListener('click', () => showPopup(gifWrappers[i]))
+        }
+    }
+    else{
+        for (let i = 0 ; i < gifWrappers.length; i++) {
+            let popup = gifWrappers[i]
+            popup.addEventListener('click', () => showPopup(gifWrappers[i]))
+        }
     }
 
     function showPopup(gifWrapper){  
@@ -45,3 +54,4 @@ function updatePopups(dataG){
 
 }
 updatePopups()
+

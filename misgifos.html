@@ -15,7 +15,6 @@
         <a href="index.html"> 
             <img src="assets/logo-desktop.svg" alt="logo" class="logo" id="logo-light"/>
             <img src="assets/logo-desktop-modo-noc.svg" alt="logo-noc" class="logo" id="logo-dark"/>
-        
         </a>
 
         <div class="search-box" id="sticky-search-bar-id">
@@ -34,30 +33,33 @@
                         <a class="nav-a" id="dark-mode"> MODO NOCTURNO </a> 
                         <a class="nav-a" id="light-mode" > MODO DIURNO </a>
                     </li>
-                    <li class="nav-li"> <a id="favorites-link" class="nav-a" href="favorites.html">  FAVORITOS </a> </li>
+                    <li class="hr"></li>
+                    <li class="nav-li"> <a id="favorites-link" class="tablinks nav-a" href="favorites.html">  FAVORITOS </a> </li>
+                    <li class="hr"></li>
                     <li class="nav-li"> <a id="misgifos-link" class="nav-a" href="misgifos.html"> MIS GIFOS </a> </li>
-                    <a href="creategifo.html">
+                    <li class="hr"></li>
+                    <li><a id="link-button" href="creategifo.html">
                         <i class="fas fa-plus" id="header-button"></i>
-                    </a>
+                    </a></li>
                 </ul>
             </div>
         </nav>    
     </header>
 
-    <section class="tab misgifos-main">
+    <main class="tab misgifos-main">
         <section class="misgifos-title"> 
             <img src="assets/icon-mis-gifos.svg" alt="icon-misgifos" id="misgifos-icon">
             <h1 class="secondTab hs" id="misgifos-title-hs"> MIS GIFOS </h1>
 
         </section>
 
-        <section class="misgifos-images"> 
+        <section id="misgifos-images"> 
 
         </section>
             
         <section class="noContent misgifos-images">
-            <img src="assets/icon-mis-gifos-sin-contenido.svg" class="noContent-image" alt="icon-misgifos-sincontenido" id="misgifos-icon-noContent">
-            <h2 class="secondTab hs" id="misgifos-noContent"> ¡Anímate a crear tu primer GIFO! </h2>
+            <!-- <img src="assets/icon-mis-gifos-sin-contenido.svg" class="noContent-image" alt="icon-misgifos-sincontenido" id="misgifos-icon-noContent">
+            <h2 class="secondTab hs" id="misgifos-noContent"> ¡Anímate a crear tu primer GIFO! </h2> -->
         </section>
 
         <section class="favorites-search"> 
@@ -69,7 +71,7 @@
             <p> Mira los últimos GIFOS de nuestra comunidad.</p>
         
             <div class="carousel">
-                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i></i> </button>
+                <button id="btn-bw-carrousel"> <i id="prev" class="fas fa-angle-left"></i> </button>
                 <div class="trending-gifos-carrousel" id="slick-list">    
                     <div class="slick-track" id="track">
                     </div>
@@ -80,7 +82,7 @@
         <div class="full-screen hidden flex-container-center">
             <button class="contract"><i class="fas fa-times fs"></i></button>
             <!-- <button id="btn-bw-carrousel-fullscreen"> <i class="fas fa-angle-left"></i></i> </button> -->
-            <img class="gifTrending-fullscreen" alt="gif">
+            <img src="http://probablyprogramming.com/wp-content/uploads/2009/03/handtinywhite.gif" class="gifTrending-fullscreen" alt="gif">
             <!-- <button id="btn-fw-carrousel-fullscreen"> <i class="fas fa-angle-right"></i> </button> -->
             <div class="info-full-screen">
                 <h4 class="gif-username-full-screen"></h4>
@@ -88,7 +90,7 @@
             </div>
             <div class="gif-btn-full-screen">
                 <button class="save-fav-full-screen"> <img src="./assets/icon-fav-hover.svg" class="heart fs" alt="icon"></button>
-                <button class="download-full-screen"><img src="./assets/icon-download.svg" class="download-btn fs" alt="icon"></img></button>
+                <button class="download-full-screen"><img src="./assets/icon-download.svg" class="download-btn fs" alt="icon"></button>
             </div>
             
         </div>
@@ -105,13 +107,11 @@
     </footer>
     
     <script src="javascript/darkmodetoggle.js"> </script>
-    <script src="javascript/searchengine.js"></script>
-    <script src="javascript/searchsuggestions.js"></script>
     <script src="javascript/trendingpanel.js"></script>
-    <script src="javascript/trendingterms.js"></script>
     <script src="javascript/navbar.js"></script>
     <script src="javascript/fullscreentag.js"></script>
     <script src="javascript/favorites.js"></script>
     <script src="javascript/download.js"></script>
+    <script src="javascript/getmygifs.js"></script>
 </body>
 </html>

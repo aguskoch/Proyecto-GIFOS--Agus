@@ -17,19 +17,6 @@
 }
 
 
-.gif-wrapper:hover {
-    background-color: #572EE5;
-    z-index: 1;
-    .gif-buttons,
-    .gif-username,
-    .gif-title{
-      opacity: 1;
-    }
-    .gifTrending:hover {
-      opacity: 0.3;
-      z-index: -1;
-    }
-}
 
 .gif-username,
 .gif-title {
@@ -60,6 +47,7 @@
 }
 
 .heart,
+.heart-active,
 .download-btn,
 .expand-btn,
 .fa-trash-alt{
@@ -72,6 +60,14 @@
     &:hover{
         background: #FFFFFF;
     }
+}
+
+.heart{
+    content: url("../assets/icon-fav-hover.svg");
+}
+
+.heart-active{
+    content: url("../assets/icon-fav-active.svg") !important;
 }
 
 
@@ -143,5 +139,19 @@
         line-height: 3vh;
     }
 
+    .gif-wrapper:hover {
+        background-color: #572EE5;
+        z-index: 1;
+        .gif-buttons,
+        .gif-username,
+        .gif-title{
+          opacity: 1;
+        }
+        .gifTrending:hover {
+          opacity: 0.3;
+          z-index: -1;
+        }
+    }
+    
 
 }
