@@ -1,6 +1,7 @@
 //***************************************FullScreen Tag ************************************************* */
-
-function updatePopups(dataG){
+import {downloadGif} from "./download.js"
+let downloadHandler = null
+export default function updatePopups(){
     const fullscreen = document.querySelector(".full-screen")
     const cross = document.getElementsByClassName ("contract")
     const gifWrappers = document.getElementsByClassName('gif-wrapper');
@@ -41,7 +42,12 @@ function updatePopups(dataG){
         saveFav[0].addEventListener('click', () => saveFavorites(gifWrapper))
 
         let download = document.getElementsByClassName("download-full-screen");
-        download[0].addEventListener('click', () => downloadGif(gifWrapper))
+        if (downloadHandler != null){
+            download[0].removeEventListener("click", downloadHandler)
+        }
+        downloadHandler = () => downloadGif(gifWrapper)
+        download[0].addEventListener('click', downloadHandler)
+
 
     }
 

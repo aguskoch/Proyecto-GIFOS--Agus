@@ -18,7 +18,7 @@
 
         <div class="search-box" id="sticky-search-bar-id">
             <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word-sticky">
-            <i id="lupe-sticky" class="fas fa-search"></i>
+            <img id="lupe-sticky" src="assets/icon-search.svg" class="search" alt="search"></img>
         </div>
 
         <nav>
@@ -55,7 +55,8 @@
             <div class="search-box">
                 <div>
                     <input type="text" placeholder="Busca GIFOS y más" class="search-bar-text" id="search-word">
-                    <i id="lupe" class="fas fa-search"></i>
+                    <img id="lupe-light" src="assets/icon-search.svg" class="search" alt="search"></img>
+                    <img id="lupe-dark" src="assets/icon-search-mod-noc.svg" class="search" alt="search"></img>
                 </div>
                 
                 <div id="suggestions"></div>
@@ -88,8 +89,8 @@
             </div>     
         </section>
         <div class="full-screen hidden flex-container-center">
-            <button class="contract"><i class="fas fa-times fs"></i></button>
-            <img src="https://probablyprogramming.com/wp-content/uploads/2009/03/handtinywhite.gif" class="gifTrending-fullscreen" alt="gif">
+            <button class="contract"><img class="close" src="assets/close.svg" alt="close"></button>
+            <img src="assets/Whitesquare.jpg" class="gifTrending-fullscreen" alt="gif">
             <div class="info-full-screen">
                 <h4 class="gif-username-full-screen"></h4>
                 <p class="gif-title-full-screen"></p>
@@ -113,14 +114,14 @@
     </footer>
 
     <script src="javascript/darkmodetoggle.js"> </script>
-    <script src="javascript/searchengine.js"></script>
-    <script src="javascript/trendingpanel.js"></script>
-    <script src="javascript/trendingterms.js"></script>
+    <script type="module" src="javascript/searchengine.js"></script>
+    <script type="module" src="javascript/trendingpanel.js"></script>
+    <script type="module" src="javascript/trendingterms.js"></script>
     <script src="javascript/navbar.js"></script>
     <script src="javascript/searchsticky.js"></script>
-    <script src="javascript/fullscreentag.js"></script>
+    <script type="module" src="javascript/fullscreentag.js"></script>
     <script src="javascript/favorites.js"></script>
-    <script src="javascript/download.js"></script>
+    <script type="module" src="javascript/download.js"></script>
     
 </body>
 </html>

@@ -33,12 +33,6 @@
   outline: none;
 }
 
-.fa-times:hover {
-  border: 1px solid #572EE5;
-  background: #572EE5;
-  color: #ffffff;
-}
-
 #btn-bw-carrousel-fullscreen {
   -ms-grid-row: 2;
   -ms-grid-column: 1;

@@ -1,5 +1,7 @@
 //**************************Trending Carousel *********************************** */
 
+import updatePopups from "./fullscreentag.js"
+import download from "./download.js"
 const url = 'https://api.giphy.com/v1/gifs/trending?';
 const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
@@ -32,7 +34,7 @@ function showTrendingPanel (dataP){
   } 
   updatePopups(dataP)
   favorites(dataP)
-  download()
+  download(dataP)
 } 
 
 
@@ -42,7 +44,7 @@ btnFwCarrousel.addEventListener("click", () => Move(2))
 const btnBwCarrousel2 = document.getElementById("btn-bw-carrousel");
 btnBwCarrousel2.addEventListener("click", () => Move(1))
 
-
+let leftPosition
 function Move(value){
     const track = document.getElementById('track');
     const gifWrapperAll = document.querySelectorAll (".gif-wrapper")

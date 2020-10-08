@@ -1,6 +1,8 @@
 //*****************************Trending Terms******************************* */
-
+import searchGifWord from "./searchengine.js"
 const urlterms = 'https://api.giphy.com/v1/trending/searches?';
+const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
+
 
 async function getTrending(){
   const responset = await fetch(urlterms+apiKey)

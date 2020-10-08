@@ -1,3 +1,6 @@
+import download from "./download.js"
+import updatePopups from "./fullscreentag.js"
+
 let favoritesButtonMore = document.getElementById("favorites-button")
 favoritesButtonMore.addEventListener("click", () => seeMore())
 let favoritesLink = document.getElementById("favorites-link")
@@ -6,7 +9,7 @@ favoritesLink.addEventListener("click", () => obtainFavorites())
 let start = 0
 let showing = 0
 function obtainFavorites(){  
-    let favArray = JSON.parse(sessionStorage.getItem("fav"))
+    let favArray = JSON.parse(localStorage.getItem("fav"))
     let favoritesResults = document.getElementById("favorites-images")
     if (favArray == null){
         const noFav =
@@ -39,6 +42,7 @@ function obtainFavorites(){
         }
     }
     updatePopups()
+    download()
     start = start + 12
 }
 obtainFavorites()

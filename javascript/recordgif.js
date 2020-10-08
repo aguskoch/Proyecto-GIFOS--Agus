@@ -4,10 +4,7 @@ const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
 const inputPreview = document.querySelector("video-box")
 
-const giveAccesToCamara = `
-    <h1 id="video-title" class="main-title">¿Nos das acceso <br> a tu cámara?</h1>
-    <p id="video-text" class="new-gifos-welcome-paragraph">El acceso a tu camara será válido sólo <br>por el tiempo en el que estés creando el GIFO.</p>
-`;
+
 
 let start = document.getElementById('start');
 start.addEventListener('click', getStream);
@@ -16,6 +13,10 @@ function getStream() {
     firstStep()
     let video = document.createElement('video');
     let videoContainer = document.getElementById('video-container');
+    const giveAccesToCamara = `
+    <h1 id="video-title" class="main-title">¿Nos das acceso <br> a tu cámara?</h1>
+    <p id="video-text" class="new-gifos-welcome-paragraph">El acceso a tu camara será válido sólo <br>por el tiempo en el que estés creando el GIFO.</p>
+    `;
     videoContainer.innerHTML = giveAccesToCamara;
     videoContainer.appendChild(video);
     navigator.mediaDevices.getUserMedia({
@@ -54,12 +55,10 @@ function getStream() {
             })
             let upload = document.getElementById('upload');
             upload.addEventListener('click', async function () {
-                //invokeSaveAsDialog(blob);
                 fifthStep();
                 let form = new FormData();
                 form.append('file', blob, 'myGif.gif');
                 console.log(form.get('file'))
-                //await Data.postGif(form);
                 uploadGif(form).then( (data) => {
                     addGifLocalStorage(data)
                 }
@@ -134,6 +133,15 @@ if(localStorage.getItem("mygifs") != null){
     array = JSON.parse(localStorage.getItem("mygifs"))
 }
 async function uploadGif(file){
+    document.getElementById('upload').style.display = 'none'
+    let videoContainer = document.getElementById('video-container')
+    videoContainer.classList.add("video-card-loading")
+    // let vidWidth = document.getElementsByTagName('video')[0].offsetWidth;
+    // let vidHeight = document.getElementsByTagName('video')[0].offsetHeight;
+    // videoContainer.style.width = `${vidWidth}px`
+    // videoContainer.style.height = `${vidHeight}px`
+    videoContainer.innerHTML = `<img src="assets/loader.svg" alt="loader"><br>
+                          <h3>Estamos subiendo tu GIFO</h3>`  
     const OtherParam = {
         method: "POST",
         body: file
@@ -148,5 +156,10 @@ function addGifLocalStorage(data){
     array.push(data)
     let jsonString = JSON.stringify(array)
     localStorage.setItem("mygifs", jsonString)
-
+    let videoContainer = document.getElementById('video-container')
+    videoContainer.innerHTML = `<img src="assets/check.svg" alt="loader"><br>
+    <h3>GIFO subido con éxito</h3>`
+    console.log("Uploaded")
 }
+
+

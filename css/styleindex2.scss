@@ -285,7 +285,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     grid-template-columns: 75% 25%;
     grid-template-rows: 25% 5% 70%;
     grid-template-areas: 
-    "search-active fa-search-active"
+    "search-active ..."
     "line-search line-search";
 }
 
@@ -301,11 +301,6 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     background: none;
 }
 
-.fa-times{
-    grid-area: fa-search-active;
-    justify-self: end;
-    color: #572EE5;
-}
 
 .line-search{
     grid-area: line-search ;
@@ -318,13 +313,32 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     }
 }
 
-.fa-search{
-    color: #572EE5;
+.search{
     float: right;
     display: block;
 
+}
+
+.search-active{
+    content: url("../assets/close.svg") !important;
+
+    // body.dark & {
+    //     content: url("../assets/close-modo-noct.svg")!important;
+    // }
+}
+
+#lupe-light{
+    display: inline;
+
     body.dark & {
-        color: #FFFFFF;
+        display: none;
+    }
+}   
+#lupe-dark{
+    display: none;
+
+    body.dark & {
+        display: grid;
     }
 }
 

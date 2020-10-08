@@ -1,23 +1,29 @@
 //*********************Search Bar Functionality********************************* */
+import updatePopups from "./fullscreentag.js"
+import download from "./download.js"
 const urlGifs = 'https://api.giphy.com/v1/gifs/search?';
+const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
 
-const lupe = document.getElementById("lupe")
-const lupeSticky = document.getElementById("lupe-sticky")
-lupe.addEventListener("click", searchGif)
-lupeSticky.addEventListener("click", searchGif)
 
-async function searchGif(){
-    const searchW = document.getElementById("search-word").value
-    const searchWS = document.getElementById("search-word-sticky").value
-    searchGifWord(searchW)
-    searchGifWord(searchWS)
+const text = document.getElementById("search-word")
+const textSticky = document.getElementById("search-word-sticky")
+textSticky.addEventListener("keyup", searchGif)
+text.addEventListener("keyup", searchGif)
+
+async function searchGif(e){
+    if(e.key === "Enter"){
+        const searchW = document.getElementById("search-word").value
+        const searchWS = document.getElementById("search-word-sticky").value
+        searchGifWord(searchW)  
+        searchGifWord(searchWS)
+    }
 
 }
 
 let showing = 0
 let searchTerm 
-async function searchGifWord(searchT, start = 0){
+export default async function searchGifWord(searchT, start = 0){
     const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)//+"&offset="+showing)
     const jsonG = await responseG.json()
     searchTerm = searchT
@@ -87,13 +93,17 @@ function showSearchGif (dataG, erase = true){
     download(dataG)
 }
 
-
+const lupelight = document.getElementById("lupe-light")
+const lupedark = document.getElementById("lupe-dark")
+const lupeSticky = document.getElementById("lupe-sticky")
 const searchInput = document.getElementById("search-word");
 const suggestionsPanel = document.getElementById('suggestions');
 
 function fnAutoComplete(){
     searchInput.addEventListener('keyup', async (event) =>{
     let sug = await getAutoComplete(searchInput.value);
+    lupelight.classList.add("search-active")
+    lupedark.classList.add("search-active")
     const view = `
       <ul class="suggestions">
           ${sug.data.map(item => `
@@ -109,13 +119,17 @@ function fnAutoComplete(){
 
     let optionList = document.getElementsByClassName("option-list");
     for (let j = 0; j < optionList.length; j++){
-        console.log(optionList)
         optionList[j].addEventListener("click", () => suggestion(optionList[j]))
     }
 
     function suggestion(optionList){
         const text = optionList.innerText
         searchGifWord(text)
+    }
+
+    if(searchInput.value == ""){
+    lupe.classList.remove("search-active")
+    lupeSticky.classList.remove("search-active")
     }
 })
 }
@@ -127,4 +141,15 @@ async function getAutoComplete(text){
     const response = await fetch(url);
     const data = await response.json();
     return data
+}
+
+lupelight.addEventListener("click", deletesearch)
+lupedark.addEventListener("click", deletesearch)
+function deletesearch(){
+    if(lupelight.classList.contains("search-active") || lupedark.classList.contains("search-active")){
+        searchInput.value = ""
+        suggestionsPanel.innerHTML = ""
+        lupelight.classList.remove("search-active")
+        lupedark.classList.remove("search-active")
+    }
 }

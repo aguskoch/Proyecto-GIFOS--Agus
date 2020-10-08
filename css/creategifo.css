@@ -96,6 +96,12 @@
   video {
     height: 100%;
   }
+  .video-card-loading {
+    background: rgba(87, 46, 229, 0.7);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
   .p-createGifo {
     padding-top: 1vh;
     font-size: 1.2em;

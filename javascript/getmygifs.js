@@ -1,4 +1,7 @@
 const urlget = "https://api.giphy.com/v1/gifs?"
+const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
+import updatePopups from "./fullscreentag.js"
+import download from "./download.js"
 
 let mygifsBtnMore = document.getElementById("misgifos-button")
 mygifsBtnMore.addEventListener("click", () => seeMore())
@@ -18,7 +21,7 @@ let data
 let showing = 0
 function renderGifs(){
     console.log(data)
-    let dataCount = data.slice(showing, showing+1)
+    let dataCount = data.slice(showing, showing+12)
     const mygifsimages = document.getElementById("misgifos-images")
     if (mygifsArray == null){
         const noMyGif =
@@ -50,7 +53,7 @@ function renderGifs(){
             
         }
     }
-    showing = showing + 1
+    showing = showing + 12
     updatePopups()
     download()
     favorites()
