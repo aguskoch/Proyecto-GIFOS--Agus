@@ -35,7 +35,7 @@ function saveFavorites(gifWrapper){
     })){
         array.push(jsonObject)     
         let jsonString = JSON.stringify(array)
-        sessionStorage.setItem("fav", jsonString)
+        localStorage.setItem("fav", jsonString)
     } 
     
 

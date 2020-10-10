@@ -128,7 +128,8 @@ function fnAutoComplete(){
     }
 
     if(searchInput.value == ""){
-    lupe.classList.remove("search-active")
+    lupelight.classList.remove("search-active")
+    lupedark.classList.remove("search-active")
     lupeSticky.classList.remove("search-active")
     }
 })
@@ -136,7 +137,6 @@ function fnAutoComplete(){
 fnAutoComplete()
 
 async function getAutoComplete(text){
-    console.log(text)
     const url = 'https://api.giphy.com/v1/gifs/search/tags?api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz&q='+text;
     const response = await fetch(url);
     const data = await response.json();
