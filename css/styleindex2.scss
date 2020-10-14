@@ -39,6 +39,10 @@ header{
     z-index: 10;
     width: 100%;
     border-top: 0.2em solid #572EE5;
+
+    body.dark & {
+        border-top: 0.2em solid #000000;
+    }
 }
 
 #logo-light{
@@ -293,6 +297,10 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     background: none;
     font-family:'Roboto', sans-serif;
     font-size: 1em;
+
+    body.dark & {
+        color: #FFFFFF;
+    }
 }
 
 .search-bar-text-active{
@@ -339,6 +347,22 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
 
     body.dark & {
         display: grid;
+    }
+}
+
+
+#lupe-sticky-light{
+
+    body.dark & {
+        display: none;
+    }
+}   
+
+#lupe-sticky-dark{
+    display: none;
+
+    body.dark & {
+        display: inline;
     }
 }
 
@@ -496,12 +520,18 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     align-items: center;
     font-size: 1em;
     padding: 4vh;
+    border-bottom: 0.2em solid #572EE5;
 
     p {
         body.dark & {
             color: #FFFFFF;
         }
     }
+
+    body.dark & {
+        border-bottom: 0.2em solid #000000;
+    }
+
 }
 
 
@@ -702,7 +732,7 @@ header nav .menu input:checked ~ span:nth-last-child(2) {
     .footer{
         flex-direction: row;
         justify-content: space-between;
-        border-bottom: 0.2em solid #572EE5;
+        
     }
     
     .contacts{
