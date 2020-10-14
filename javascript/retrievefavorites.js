@@ -1,5 +1,6 @@
-import download from "./download.js"
-import updatePopups from "./fullscreentag.js"
+import downloadGif from "./download.js"
+import showPopup from "./fullscreentag.js"
+
 
 let favoritesButtonMore = document.getElementById("favorites-button")
 favoritesButtonMore.addEventListener("click", () => seeMore())
@@ -26,6 +27,7 @@ function obtainFavorites(){
         for (let i = 0; i < favCount.length; i++){
             const divGif = document.createElement("div");
                 divGif.setAttribute("class", "gif-wrapper")
+                divGif.setAttribute("id", `${favCount[i].id}"-fav"`)
                 const gifInfo =
                         `<div class="gif-buttons">
                             <button class="trash-fav"> <img src="./assets/icon_trash.svg" class="fa-trash-alt" alt="icon"> </button>
@@ -39,10 +41,13 @@ function obtainFavorites(){
                         </div>`
                 divGif.innerHTML = gifInfo
                 favoritesResults.appendChild(divGif)
+                let wrapper = document.getElementById(`${favCount[i].id}"-fav"`)
+                wrapper.getElementsByClassName("trash-fav")[0].addEventListener('click', () => eliminateFav(wrapper))
+                wrapper.getElementsByClassName("download")[0].addEventListener('click', () => downloadGif(wrapper))
+                wrapper.getElementsByClassName("expand")[0].addEventListener('click', () =>  showPopup(wrapper))
         }
     }
-    updatePopups()
-    download()
+                
     start = start + 12
 }
 obtainFavorites()
@@ -51,28 +56,26 @@ function seeMore(){
     obtainFavorites()
 }
 
-function eliminatefavorites(){
-    const fullscreen = document.querySelector(".full-screen")
-    const gifWrappers = document.getElementsByClassName('gif-wrapper');
-    //console.log(gifWrappers)
+// function eliminatefavorites(gifWrapper){
+//     const gifWrappers = document.getElementsByClassName('gif-wrapper');
 
-    for (let i = 0 ; i < gifWrappers.length; i++) {
-        let trashFav = gifWrappers[i].getElementsByClassName("trash-fav");     
-        trashFav[0].addEventListener('click', () => eliminateFav(gifWrappers[i]))
-    }
+//     for (let i = 0 ; i < gifWrappers.length; i++) {
+//         let trashFav = gifWrappers[i].getElementsByClassName("trash-fav");     
+//         trashFav[0].addEventListener('click', () => eliminateFav(gifWrappers[i]))
+//     }
 
-}
-eliminatefavorites()
+// }
+// eliminatefavorites()
 
 function eliminateFav(gifWrapper){
-    let favArray = JSON.parse(sessionStorage.getItem("fav"))
+    let favArray = JSON.parse(localStorage.getItem("fav"))
     console.log(favArray)
 
     for (let i = 0; i < favArray.length; i++){
         if(favArray[i].image == gifWrapper.getElementsByClassName("gifTrending")[0].src){
             favArray.splice(i,1)
             let jsonString = JSON.stringify(favArray)
-            sessionStorage.setItem("fav", jsonString)
+            localStorage.setItem("fav", jsonString)
             break
         }   
     }

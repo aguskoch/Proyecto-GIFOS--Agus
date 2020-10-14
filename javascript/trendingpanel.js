@@ -1,7 +1,7 @@
 //**************************Trending Carousel *********************************** */
 
-import updatePopups from "./fullscreentag.js"
-import download from "./download.js"
+import showPopup from "./fullscreentag.js"
+import downloadGif from "./download.js"
 const url = 'https://api.giphy.com/v1/gifs/trending?';
 const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
@@ -19,9 +19,10 @@ function showTrendingPanel (dataP){
   for(let p = 0; p < dataP.length; p++){
     const gifT = document.createElement("div");
     gifT.setAttribute("class", "gif-wrapper")
+    gifT.setAttribute("id", `${dataP[p].id}`)
     const gifInfoT =
             `<div class="gif-buttons">
-                <button class="save-fav"> <img class="heart" id=${dataP[p].id} alt="icon"></button>
+                <button class="save-fav"> <img class="heart" alt="icon"></button>
                 <button class="download"><img src="./assets/icon-download.svg" class="download-btn" alt="icon"></button>
                 <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn" alt="icon"></button>
               </div>
@@ -30,11 +31,13 @@ function showTrendingPanel (dataP){
               <p class="gif-title">${dataP[p].title}</p>`
     gifT.innerHTML = gifInfoT
     track.appendChild(gifT)
-    
+
+    let wrapper = document.getElementById(`${dataP[p].id}`)
+    wrapper.getElementsByClassName("heart")[0].addEventListener('click', () => saveFavorites(wrapper))
+    wrapper.getElementsByClassName("download")[0].addEventListener('click', () => downloadGif(wrapper))
+    wrapper.getElementsByClassName("expand")[0].addEventListener('click', () =>  showPopup(wrapper))
   } 
-  updatePopups(dataP)
-  favorites(dataP)
-  download(dataP)
+ 
 } 
 
 

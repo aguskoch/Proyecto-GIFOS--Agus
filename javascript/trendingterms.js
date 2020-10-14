@@ -20,8 +20,6 @@ function buttonTrendTerms (data){
   for(let y = 0; y < 5; y++){
     const term = document.createElement ("button");
     term.setAttribute ("class", "ps")
-    //console.log(data[y])
-    //sessionStorage.setItem (y,data[y]);
     term.innerText = data[y];
     term.addEventListener("click", () => searchGifWord(term.innerText))
     trendingTerms.appendChild(term);

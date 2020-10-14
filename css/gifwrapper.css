@@ -10,9 +10,30 @@
   opacity: 0;
 }
 
-.gif-wrapper {
+.gif-wrapper, .gif-wrapper-trending {
   width: 48vw;
   height: 30vh;
+}
+
+.gif-wrapper:hover,
+.gif-wrapper-trending:hover {
+  background-color: #572EE5;
+  z-index: 1;
+}
+
+.gif-wrapper:hover .gif-buttons,
+.gif-wrapper:hover .gif-username,
+.gif-wrapper:hover .gif-title,
+.gif-wrapper-trending:hover .gif-buttons,
+.gif-wrapper-trending:hover .gif-username,
+.gif-wrapper-trending:hover .gif-title {
+  opacity: 1;
+}
+
+.gif-wrapper:hover .gifTrending:hover,
+.gif-wrapper-trending:hover .gifTrending:hover {
+  opacity: 0.3;
+  z-index: -1;
 }
 
 .gif-username,
@@ -127,7 +148,8 @@ body.dark #gifMoreBtn:hover {
     width: 25vw;
     height: 35vh;
   }
-  .gif-wrapper {
+  .gif-wrapper,
+  .gif-wrapper-trending {
     height: 35vh;
     width: 25vw;
   }
@@ -146,16 +168,21 @@ body.dark #gifMoreBtn:hover {
     font-size: 1em;
     line-height: 3vh;
   }
-  .gif-wrapper:hover {
+  .gif-wrapper:hover,
+  .gif-wrapper-trending:hover {
     background-color: #572EE5;
     z-index: 1;
   }
   .gif-wrapper:hover .gif-buttons,
   .gif-wrapper:hover .gif-username,
-  .gif-wrapper:hover .gif-title {
+  .gif-wrapper:hover .gif-title,
+  .gif-wrapper-trending:hover .gif-buttons,
+  .gif-wrapper-trending:hover .gif-username,
+  .gif-wrapper-trending:hover .gif-title {
     opacity: 1;
   }
-  .gif-wrapper:hover .gifTrending:hover {
+  .gif-wrapper:hover .gifTrending:hover,
+  .gif-wrapper-trending:hover .gifTrending:hover {
     opacity: 0.3;
     z-index: -1;
   }

@@ -1,6 +1,6 @@
 //*********************Search Bar Functionality********************************* */
-import updatePopups from "./fullscreentag.js"
-import download from "./download.js"
+import showPopup from "./fullscreentag.js"
+import downloadGif from "./download.js"
 const urlGifs = 'https://api.giphy.com/v1/gifs/search?';
 const apiKey = 'api_key=Xfw2Rr8bA07WpNCqwtJws7z9j7zgOMwz';
 
@@ -22,9 +22,10 @@ async function searchGif(e){
 }
 
 let showing = 0
+let showingSeeMore = false
 let searchTerm 
 export default async function searchGifWord(searchT, start = 0){
-    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)//+"&offset="+showing)
+    const responseG = await fetch(urlGifs+"q="+searchT+"&"+apiKey)
     const jsonG = await responseG.json()
     searchTerm = searchT
     let dataG = jsonG.data
@@ -64,9 +65,10 @@ function showSearchGif (dataG, erase = true){
         for(let e = 0; e < dataG.length; e++){
             const divGif = document.createElement("div");
             divGif.setAttribute("class", "gif-wrapper")
+            divGif.setAttribute("id", `${dataG[e].id}`)
             const gifInfo =
                     `<div class="gif-buttons">     
-                        <button class="save-fav"> <img class="heart" id=${dataG[e].id} alt="icon"></button>
+                        <button class="save-fav"> <img class="heart" alt="icon"></button>
                         <button class="download"><img src="./assets/icon-download.svg" class="download-btn" alt="icon"></button>
                         <button class="expand"><img src="./assets/icon-max.svg" class="expand-btn" alt="icon"></button>
                     </div>
@@ -77,20 +79,21 @@ function showSearchGif (dataG, erase = true){
                     </div>`
             divGif.innerHTML = gifInfo
             gifResult.appendChild(divGif)
-            
+            let wrapper = document.getElementById(`${dataG[e].id}`)
+            wrapper.getElementsByClassName("heart")[0].addEventListener('click', () => saveFavorites(wrapper))
+            wrapper.getElementsByClassName("download")[0].addEventListener('click', () => downloadGif(wrapper))
+            wrapper.getElementsByClassName("expand")[0].addEventListener('click', () =>  showPopup(wrapper))
         }
-        if(showing < 12){
+        if(showingSeeMore === false){
             const divSearch = document.createElement("button")
             divSearch.setAttribute("id", "gifMoreBtn")
             divSearch.innerText = "VER MÁS"
             seeMoreBtn.appendChild(divSearch)
             const moreBtn = document.getElementById("gifMoreBtn")
             moreBtn.addEventListener("click", seeMore)
+            showingSeeMore = true
         }
     } 
-    updatePopups(dataG)
-    favorites(dataG)
-    download(dataG)
 }
 
 const lupelight = document.getElementById("lupe-light")

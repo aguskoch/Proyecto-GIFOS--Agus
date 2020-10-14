@@ -1,15 +1,16 @@
-export default function download(){
-    const gifWrappers = document.getElementsByClassName('gif-wrapper');
+// export default function download(className){
+//     const gifWrappers = document.getElementsByClassName(className);
 
-    for (let i = 0 ; i < gifWrappers.length; i++) {
-        let download = gifWrappers[i].getElementsByClassName("download");   
-        download[0].addEventListener('click', () => downloadGif(gifWrappers[i]))
-    }
+//     for (let i = 0 ; i < gifWrappers.length; i++) {
+//         let download = gifWrappers[i].getElementsByClassName("download");   
+//         download[0].addEventListener('click', () => downloadGif(gifWrappers[i]))
+//     }
 
-}
+// }
 
 
-export async function downloadGif(gifWrapper){
+export default async function downloadGif(gifWrapper){
+    console.log(gifWrapper)
     let image = gifWrapper.getElementsByClassName("gifTrending")[0].src
     let title = gifWrapper.getElementsByClassName("gif-title")[0].innerText
     let a = document.createElement('a');
