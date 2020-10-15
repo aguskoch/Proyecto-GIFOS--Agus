@@ -136,10 +136,10 @@ async function uploadGif(file){
     document.getElementById('upload').style.display = 'none'
     let videoContainer = document.getElementById('video-container')
     videoContainer.classList.add("video-card-loading")
-    // let vidWidth = document.getElementsByTagName('video')[0].offsetWidth;
-    // let vidHeight = document.getElementsByTagName('video')[0].offsetHeight;
-    // videoContainer.style.width = `${vidWidth}px`
-    // videoContainer.style.height = `${vidHeight}px`
+    let vidWidth = document.getElementsByTagName('video')[0].offsetWidth;
+    let vidHeight = document.getElementsByTagName('video')[0].offsetHeight;
+    videoContainer.style.width = `${vidWidth}px`
+    videoContainer.style.height = `${vidHeight}px`
     videoContainer.innerHTML = `<img src="assets/loader.svg" alt="loader"><br>
                           <h3>Estamos subiendo tu GIFO</h3>`  
     const OtherParam = {

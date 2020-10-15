@@ -101,6 +101,8 @@
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
   }
   .p-createGifo {
     padding-top: 1vh;
